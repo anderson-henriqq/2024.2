@@ -26,3 +26,10 @@ A atividade demonstrou a conteinerização eficiente de um projeto Django com Po
 
 ### Arquivos docker e de configuração do django
 
+[Dockerfile](mysite/Dockerfile)
+
+[Docker-compose](mysite/docker.compose.yml)
+
+[.env](mysite/.env)
+
+[Requirements](mysite/requirements.txt)
