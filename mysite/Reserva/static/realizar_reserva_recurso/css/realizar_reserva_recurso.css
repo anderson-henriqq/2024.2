@@ -1,0 +1,306 @@
+.container {
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    padding: 3.2rem;
+    border-radius: 1.2rem;
+    background-color: #FFFFFF;
+}
+
+
+.header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+}
+
+.main {
+    display: block;
+}
+
+.sidebar {
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+
+.content {
+    flex: 3;
+    padding: 10px;
+}
+.titulo h1{
+    color: var(--citrino-medium);
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.calendario{
+    display:flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+    margin-bottom: 45px;
+}
+
+.bloco {
+    padding:10px 8px ;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: var(--office-70);
+}
+
+.bloco.active {
+    background-color: #F0FEBF; /* Cor após clique */
+    border: 2px solid #7DA000;
+    border-radius: 6px;
+    color: var(--Office)
+}
+
+.conteudo{
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+}
+
+.dia{
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.diaN {
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.periodo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    font-weight: bold;
+    color: var(--citrino-dark);
+    margin-bottom: 23px;
+}
+
+.periodo .titulo {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+} 
+
+.periodo .manha,
+.periodo .tarde,
+.periodo .noite {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.horarios_manha {
+    display: flex;
+    gap: 10px;
+}
+
+.bloco_horario {
+    border: 2px solid var(--office-15);
+    border-radius: .6rem;
+    text-align: center;
+    color: var(--office-70);
+}
+
+.bloco_horario.active {
+    border: .2rem solid var(--citrino-dark);
+    color: var(--Office);
+    background-color: var(--citrino-25);
+}
+
+.bloco_horario.active .preco {
+    color: var(--white);
+    background-color: var(--citrino-dark);
+}
+
+.conteudo_horario{
+    padding: .8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+}
+
+.conteudo_horario .hora {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.preco {
+    width: 100%;
+    padding: .2rem .6rem;
+    border-radius: .4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--citrino-25);
+}
+
+.preco sup {
+    font-size: 9px; 
+    vertical-align:super; 
+}
+
+.preco sub {
+    font-size: 9px; 
+    vertical-align:sub;
+}
+
+/* O modal (fundo escuro) */
+.modal {
+    display: none;  /* Inicialmente oculto */
+    position: fixed; /* Fixa na tela */
+    z-index: 1; /* Fica sobre outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;  /* Ocupa toda a largura */
+    height: 100%; /* Ocupa toda a altura */
+    overflow: auto; /* Caso haja conteúdo excedente */
+    background-color: rgb(0, 0, 0); /* Cor do fundo */
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente */
+}
+
+/* O conteúdo do modal (caixa central) */
+.modal-content {
+    position: absolute;
+    top: calc(50% - 80px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* margin: 15% auto;  Centraliza na tela */
+    border: 1px solid #888;
+    width: 400px; /* Largura do modal */
+    height: fit-content; /* Altura do modal */
+    max-width: 400px; /* Largura máxima do modal */
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 5.8rem;
+    background-color: var(--white);
+}
+
+.modal-content header {
+    position: relative;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 1.2rem; right: 1.2rem;
+}
+
+.modal-content .cover {
+    border-radius: 1.2rem 1.2rem 0 0;
+}
+
+.modal-content .avatar {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: .4rem solid var(--white);
+    border-radius: 999px;
+}
+
+/* O botão de fechar */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;    
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content .body {
+    padding: 0 2.4rem 2.4rem 2.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.modal-content .title {
+    color: var(--citrino-medium);
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.modal-content .info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.modal-content .info > * {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+.modal-content .info > * > p {
+    color: var(--Office);
+}
+
+.modal-content .info > * > span {
+    color: var(--office-30);
+}
+
+.modal-content .info #modal-preco {
+    color: var(--citrino-dark);
+}
+
+.modal-content .actions {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+}
+
+.botoes_modal{
+    display: flex;
+    margin-left: 12px;
+    margin-right: 12px;
+    border: 1px solid #000;
+}
+
+#botao_outro_horario {
+    width: 168px;             /* Largura do botão */
+    height: 40px;             /* Altura do botão */
+    padding: 0;               /* Remove o preenchimento extra */
+    box-sizing: border-box;   /* Garante que o tamanho do botão seja exatamente 168x40, incluindo bordas e padding */
+    background-color: white;  /* Cor de fundo do botão (branco) */
+    color: var(--citrino-medium);             /* Cor da fonte (verde) */
+    border-radius: 6px;       /* Bordas arredondadas, opcional */
+
+}
+
+#botao_Reservar {
+    width: 168px;             /* Largura do botão */
+    height: 40px;             /* Altura do botão */
+    padding: 0;               /* Remove o preenchimento extra */
+    box-sizing: border-box;   /* Garante que o tamanho do botão seja exatamente 168x40, incluindo bordas e padding */
+    background-color: var(--Citrino);  /* Cor de fundo do botão (branco) */
+    color: var(--Office);             /* Cor da fonte (verde) */
+    border-radius: 6px;       /* Bordas arredondadas, opcional */
+    
+}

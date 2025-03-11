@@ -1,0 +1,42 @@
+/* [Font] Fira Sans (400-500-700) */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;700&display=swap');
+
+:root {
+    font-size: 62.5%; /* 1rem = 10px */
+    
+    /* Main */
+    --Citrino: #C5FD01;
+    --Coral: #FD2600;
+        /* Variants */
+        --citrino-dark: #7DA000;
+        --citrino-medium: #A1CF00;
+    /* Background */
+    --bg-citrino: #EBEEE3;
+    /* Monocromatics */
+    --white: #FFFFFF;
+    --Paper: #EDEDEF;
+    --Office: #413D49;
+        /* Opacity */
+        --citrino-25: #F0FEBF;
+        --office-70: #7A7780;
+        --office-30: #C6C5C8;
+        --office-15: #E3E2E4;
+        --sunflower-25: #FBF0C3;
+    /* Others */
+    --SunFlower: #F1C40F;
+    --Blame: #F39C12;
+
+    /* Utils */
+    --height-navbar: 7.2rem;
+    --box-shadow: 0 0 1.2rem rgba(65, 61, 73, .1);
+}
+
+/* Global */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Fira Sans", sans-serif;
+    font-size: 1.6rem;
+}

@@ -1,0 +1,60 @@
+/* Global */
+body {
+    min-height: 100vh;
+    padding-top: calc(var(--height-navbar) + 4.8rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../img/bg.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Common */
+main, footer {
+    display: flex !important /* competindo com reset.css */;
+    align-items: center;
+}
+
+/* ===== MAIN =============== */
+body > main {
+    width: 100%;
+    height: 100%;
+    padding-inline: 10.4rem;
+    justify-content: center;
+}
+
+/* ===== FOOTER =============== */
+footer {
+    width: 100%;
+    margin-top: 4.8rem;
+    padding: 4.8rem 10.4rem;
+    justify-content: space-between;
+    background-color: var(--Paper);
+    box-shadow: 0 -.6rem 1.2rem rgba(65, 61, 73, .25);
+}
+
+footer .logo-rights, footer .social-media {
+    display: flex;
+}
+
+footer .logo-rights {
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+footer .logo-rights .rights {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+footer .social-media {
+    display: flex;
+    gap: 3.2rem;
+}
+
+footer .social-media a {
+    display: flex;
+}

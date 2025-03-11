@@ -1,0 +1,334 @@
+[placeholder]::placeholder {
+    font-style: italic;
+    color: var(--office-30);
+}
+
+/* Common */
+.search-box .locate, .search-box .btn-search,
+.searchbox-controls .controls,
+.searchbox-controls .display-mode,
+.searchbox-controls .display-mode ul,
+.filter header, .tags > .tag,
+.for-each .info header,
+.for-each .info .location,
+.for-each .info .rate,
+.for-each .tags,
+.for-each .actions, .for-each button.reservar,
+.for-each .left, .for-each .left button {
+    display: flex;
+    align-items: center;
+}
+
+.search-box,
+.search-box input,
+.filter header,
+.for-each {
+    width: 100%;
+}
+
+.searchbox-controls,
+.search-box,
+.filter,
+.for-each .card {
+    border-radius: 1.2rem;
+    background-color: var(--white);
+}
+
+/* ===== NAVBAR =============== */
+.for-each .info header {
+    min-width: 19.2rem;
+    gap: .8rem;
+}
+
+.for-each .space-profile-img {
+    display: flex;
+    width: 4.8rem;
+    aspect-ratio: 1;
+}
+
+.for-each .space-profile-img img {
+    border: .2rem solid var(--Citrino);
+    border-radius: 999px;
+}
+
+/* ===== MAIN =============== */
+.main-container {
+    width: 100%;
+    max-width: 123.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.searchbox-controls {
+    height: 7.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.8rem 0 20.8rem;
+    gap: 1.8rem;
+}
+
+.searchbox-controls .actions {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.searchbox-controls .actions > div {
+    display: flex;
+}
+
+.search-box {
+    width: 100%;
+    min-width: 50.4rem;
+    border: .2rem solid var(--Paper);
+    padding: .6rem .6rem .6rem 1.8rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-box .locate span {
+    color: var(--office-70);
+}
+
+.search-box .locate select {
+    background-color: transparent;
+}
+
+.search-box .btn-search {
+    padding: .9rem;
+    border-radius: .6rem;
+    background-color: var(--Citrino);
+}
+
+.searchbox-controls .controls {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.searchbox-controls .order-by span,
+.searchbox-controls .order-by select,
+.searchbox-controls .display-mode span {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.searchbox-controls select[name="order"] {
+    width: min-content;
+    padding: 1.2rem;
+    border: .2rem solid var(--office-15);
+    border-radius: 1.2rem;
+    background-color: var(--white);
+}
+
+.searchbox-controls .order-by span,
+.searchbox-controls .display-mode span {
+    color: var(--office-70);
+}
+
+.searchbox-controls .display-mode ul {
+    gap: .4rem;
+}
+
+.searchbox-controls .order-by select {
+    color: var(--Office);
+}
+
+.filter {
+    /* width: 19.2rem; */
+    min-width: 19.2rem;
+    padding-block: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+.filter header {
+    border-bottom: .1rem solid var(--Paper);
+
+    padding-bottom: 1.2rem;
+    justify-content: center;
+    gap: .4rem;
+    font-weight: 700;
+    letter-spacing: .16rem;
+    color: var(--office-30);
+}
+
+.filter .body {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+.filter .contains,
+.filter .sports {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.filter .tags {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.tags > .tag {
+    width: max-content;
+    padding: .4rem .8rem;
+    gap: .4rem;
+    font-size: 1.2rem;
+    border: .1rem solid var(--office-70);
+    border-radius: 999px;
+    color: var(--office-70);
+}
+
+.filter h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--Office);
+}
+
+.results {
+    /* border: 1px solid red; */
+
+    width: 100%;
+    display: flex;
+    gap: 1.6rem;
+}
+
+.for-each {
+    /* border: 1px solid blue; */
+
+    width: 100%;
+    max-width: 102.6rem;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+}
+
+.for-each .card {
+    width: 50.4rem;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+}
+
+.for-each .cover img {
+    border-top-left-radius: 1.2rem;
+    border-top-right-radius: 1.2rem;
+}
+
+.for-each .info,
+.for-each .actions {
+    padding: 1.8rem;
+}
+
+.for-each .info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    border-bottom: .1rem solid var(--Paper);
+    color: var(--office-70);
+}
+
+.for-each .info .right {
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+
+.for-each .info .name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--citrino-dark);
+}
+
+.for-each .info .location,
+.for-each .info .rate {
+    gap: .6rem;
+}
+
+.for-each .info .location span {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--office-30);
+}
+
+.for-each .info .rate {
+    font-size: 1.2rem;
+}
+
+.for-each .info .rate strong {
+    font-weight: 700;
+}
+
+.for-each .tags {
+    gap: .4rem;
+}
+
+.for-each .tags .tag {
+    border: none;
+    background-color: var(--citrino-25);
+}
+
+.for-each .actions {
+    justify-content: space-between;
+}
+
+.for-each .left {
+    gap: .8rem;
+}
+
+.for-each .left button {
+    width: 4rem;
+    height: 4rem;
+    justify-content: center;
+    border-radius: .6rem;
+    background-color: var(--white);
+}
+
+.for-each .left svg path {
+    fill: var(--Coral);
+}
+
+.for-each button.reservar {
+    width: 23.4rem; /* NÃO está flexível */
+    height: 4rem;
+    justify-content: center;
+    padding: 1.2rem;
+    gap: .4rem;
+    border-radius: .6rem;
+    font-weight: 700;
+    color: var(--Office);
+    background-color: var(--Citrino);
+}
+
+/* Hover */
+.filter .tags > .tag,
+.for-each .left button:hover {
+    cursor: pointer;
+}
+
+.for-each .left button:hover {
+    border: .2rem solid var(--citrino-medium);
+}
+
+/* States */
+.tag.active {
+    border: .1rem solid var(--citrino-dark);
+    color: var(--citrino-dark);
+    background-color: var(--citrino-25);
+}
+
+.tag.active svg path {
+    fill: var(--citrino-dark);
+}
+
+.display-mode svg.active rect {
+    fill: var(--citrino-25);
+}

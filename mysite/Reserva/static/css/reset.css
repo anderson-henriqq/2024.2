@@ -1,0 +1,72 @@
+/* Reset CSS */
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Manual insert */
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: inherit; /* Manter a cor padrão para todos os estados */
+    text-decoration: none; /* Remover sublinhado para todos os estados */
+}
+
+button, input, hr {
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+}
+
+iframe, img {
+	vertical-align: bottom;
+}
+
+/* Elementos com cursor pointer */
+a,
+button,
+input[type="submit"],
+input[type="button"],
+input[type="checkbox"],
+input[type="radio"],
+select,
+[role="button"],
+[role="link"],
+[tabindex],
+.clickable,
+.pointer {
+    cursor: pointer;
+}

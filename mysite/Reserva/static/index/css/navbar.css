@@ -1,0 +1,72 @@
+.nav-bar, .nav-bar nav, 
+.nav-links, .nav-links li, 
+.nav-bar .logo,
+.signin-signup {
+    display: flex;
+}
+
+.nav-bar {
+    position: fixed;
+    width: 100%;
+    height: var(--height-navbar);
+    padding-inline: 10.4rem;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(3.2rem);
+}
+
+.nav-bar nav {
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signin-signup {
+    min-width: 29.6rem;
+    gap: 1.2rem;
+}
+
+.signin-signup button {
+    height: 4.8rem;
+    padding-inline: 2.4rem;
+    border-radius: .6rem;
+    font-weight: 700;
+}
+
+.btn-signup {
+    background-color: transparent;
+    border: .2rem solid var(--Citrino);
+    color: var(--Citrino);
+}
+
+.btn-signin {
+    min-width: 13rem;
+    background-color: var(--Citrino);
+    color: var(--Office);
+}
+
+.nav-links {
+    height: 100%;
+    align-items: center;
+}
+
+.nav-links li {
+    height: 100%;
+    padding-inline: 1.6rem;
+    align-items: center;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--Paper);
+}
+
+.nav-bar .logo {
+    height: fit-content;
+}
+
+/* States */
+.nav-links li.active {
+    border-bottom: .4rem solid var(--Citrino);
+    color: var(--white);
+    background: linear-gradient(180deg, rgba(197,253,1,0) 0%, rgba(197,253,1,0.25) 100%);
+}

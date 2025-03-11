@@ -1,0 +1,99 @@
+body {
+    padding-top: var(--height-navbar);
+    display: flex;
+    flex-direction: column;
+}
+
+body > main {
+    padding: 0 10.4rem 0 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12rem;
+}
+
+.sidebar {
+    width: 19.2rem;
+    height: 100vh;
+    padding-block: 4.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+    background-color: var(--white);
+}
+
+.sidebar .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar .weather {
+    width: min-content;
+    padding: 1.6rem;
+    border-radius: 999px;
+    display: flex;
+    background-color: var(--citrino-25);
+}
+
+.sidebar .greeting {
+    padding-bottom: 4.8rem;
+    border-bottom: .1rem solid var(--Paper);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .8rem;
+}
+
+.sidebar .greeting strong {
+    font-weight: 700;
+    color: var(--Office);
+}
+
+.sidebar .tab-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .aside-item {
+    padding: 1.6rem 2.4rem;
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    justify-content: flex-start;
+    color: var(--Office);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.dashboard {
+    width: 100%;
+    padding-block: 4.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    color: var(--Office);
+}
+
+.dashboard select[name="month"] {
+    width: min-content;
+    padding: 1.2rem 1.8rem;
+    border-radius: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--Office);
+    background-color: var(--white);
+}
+
+/* States */
+.sidebar li.active {
+    background-image: 
+        linear-gradient(90deg, rgb(197, 253, 1, 0) 0%, rgb(197, 253, 1, .25) 100%);
+    font-weight: 700;
+    color: var(--citrino-dark);
+    border-right: .4rem solid var(--citrino-medium);
+}
+
+.sidebar li.active svg path {
+    fill: var(--citrino-dark);
+}

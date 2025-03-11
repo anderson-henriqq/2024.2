@@ -1,0 +1,37 @@
+.login-side form label[for="username"],
+.login-side form label[for="pssw"],
+.login-side form label[for="confirm-pssw"] {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    color: var(--Office);
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.login-side .pssw-requirements {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    color: var(--Office);
+}
+
+.login-side .pssw-requirements p {
+    font-weight: 500;
+}
+
+.login-side .pssw-requirements ul {
+    list-style: inside;
+}
+
+.login-side .pssw-requirements ul li {
+    color: var(--Coral);
+}
+
+.presentation-side.signup {
+    background-image: 
+        linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.1) 25%),
+        linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.5) 100%),
+        linear-gradient(180deg, rgba(197,253,1,0) 0%, rgba(197,253,1,.5) 100%),
+        url("../img/bg-side-signup.webp");
+}

@@ -1,0 +1,327 @@
+body {
+    padding-top: var(--height-navbar);
+    display: flex;
+    flex-direction: column;
+}
+
+body > main {
+    padding: 0 10.4rem 0 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12rem;
+}
+
+.sidebar {
+    width: 19.2rem;
+    height: 100vh;
+    padding-block: 4.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+    background-color: var(--white);
+}
+
+.sidebar .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar .weather {
+    width: min-content;
+    padding: 1.6rem;
+    border-radius: 999px;
+    display: flex;
+    background-color: var(--citrino-25);
+}
+
+.sidebar .greeting {
+    padding-bottom: 4.8rem;
+    border-bottom: .1rem solid var(--Paper);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .8rem;
+}
+
+.sidebar .greeting strong {
+    font-weight: 700;
+    color: var(--Office);
+}
+
+.sidebar .tab-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .aside-item {
+    padding: 1.6rem 2.4rem;
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    justify-content: flex-start;
+    color: var(--Office);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.container {
+    border-radius: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    padding: 1.8rem 4.8rem;
+    margin: 10px;
+    border: none;
+    width: 816px;
+    background-color: var(--white);  
+}
+.agenda {
+    color: var(--citrino-medium);
+    font-size: 2.4rem;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+}
+.data {
+    display: flex;
+    border: none;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    gap: 3.2rem;
+    color: var(--Office);
+}
+.data_conteudo {
+    display: flex;
+}
+.conteudo {
+    flex-direction: column;
+    display: flex;
+    text-align: center;
+}
+.conteudo h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+.conteudo span{
+    font-size: 1.2rem;    
+}
+.linha-vertical { 
+    width: 0.2rem; 
+    height: 10rem; 
+    background-color: var(--Paper); 
+}
+.data_hora {
+    display: flex;
+    font-size: 2.4rem;
+    align-items: center;
+    justify-content: center;
+}
+.icone_calendario {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.tbl-reservas {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tbl-reservas table thead tr th div {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.reservas {
+    color: var(--citrino-dark);
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 2.1rem;
+}
+.reservas_cabecalho {
+    display: flex;
+    font-size: 12px;
+    color: var(--Office);
+    font-weight: bolder;
+}
+.status {
+    margin-right: 65px;
+}
+.organizador {
+    margin-right: 65px;
+}
+.recurso {
+    margin-right: 65px;
+}
+.checkin {
+    margin-right: 65px;
+}
+.checkin {
+    margin-right: 65px;
+}
+.reservas_linha_um{
+    display: flex;
+    text-align: center;
+    margin-bottom: 10px;
+    border: none;
+}
+.reservas_linha_um .status {
+    width: 68px;
+    height: 20px;
+    margin-top: 10px;
+    background-color: var(--office-30);
+}
+.reservas_linha_um .status .conteudo{
+    font-weight: bold;
+    font-size: 10px;
+    color: var(--Office);
+}
+.reservas_linha_um .organizador .icone {
+    align-items: left;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+}
+.reservas_linha_um .organizador .conteudo {
+    font-size: 12px;
+    display: inline-block;
+    color: var(--citrino-dark);
+    align-items: left;
+}
+.reservas_linha_um .recurso .conteudo {
+    font-size: 12px;
+    display: inline-block;
+    color: var(--Office);
+}
+.reservas_linha_um .checkin .conteudo {
+    font-size: 12px;
+    display: inline-block;
+    color: var(--Office);
+}
+.reservas_linha_um .acoes button{
+    width: 72px;
+    height: 26px;
+    background-color: #FD2600;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    
+}
+th, td {
+    padding: 12px;
+    border-collapse: collapse;
+    border: none;
+    border-bottom: none;
+    text-align: left;
+    color: var(--Office);
+    font-size: 12px;
+}
+th {
+    background-color: #f2f2f2;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--Office);
+}
+button {
+    padding: 6px 12px;
+    color: white;
+    border: none;
+    background-color: #f44336;
+    cursor: pointer;
+    border-radius: 12px;
+}
+table td img {
+    width: 24px; /* Tamanho ajustado */
+    height: 24px; /* Tamanho ajustado */
+    border-radius: 50%;
+}
+.reservado {
+    padding: 6px 12px;
+    background-color: #C6C5C8; /* Cor fixa do botão RESERVADO */
+    color: var(--Office);
+    border: none;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: bold;
+    align-items: center;
+}
+/* Estilo para o botão CANCELAR (cor fixa) */
+.cancelar-button {
+    padding: 6px 12px;
+    background-color: #FD2600; /* Cor fixa do botão CANCELAR */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 6px 12px;
+    color: white !important;
+    border: none;
+    background-color: #f44336;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.checkout-button {
+    padding: 6px 12px;
+    background-color: var(--Citrino); /* Cor fixa do botão CANCELAR */
+    color: var(--Office);
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+table tr {
+    border: none;
+}
+table tr, table th {
+    background-color: transparent; 
+}
+table td, table th {
+    border-left: none;
+    border-right: none;
+}
+table tr {
+    border: none;
+}
+table tr:last-child {
+    border-top: 2px solid #C6C5C8; 
+}
+table th, table td {
+    border-top: 1px solid #ddd; 
+    border-bottom: 1px solid #ddd; 
+    background-color: transparent; 
+}
+.sarah-eastern {
+    color: #7DA000;
+    font-size: 12px;
+}
+.checkout {
+    padding: 6px 12px;
+    background-color: #fbf0c3;
+    color: #F39C12;
+    border: none;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: bold;
+    align-items: center;
+}
+.concluido {
+    padding: 6px 12px;
+    background-color: var(--citrino-25); 
+    color: var(--citrino-dark);
+    border: none;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: bold;
+    align-items: center;
+}

@@ -1,0 +1,157 @@
+body {
+    padding-top: var(--height-navbar);
+    display: flex;
+    flex-direction: column;
+}
+
+body > main {
+    padding: 0 10.4rem 0 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12rem;
+}
+
+.sidebar {
+    width: 19.2rem;
+    height: 100vh;
+    padding-block: 4.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+    background-color: var(--white);
+}
+
+.sidebar .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar .weather {
+    width: min-content;
+    padding: 1.6rem;
+    border-radius: 999px;
+    display: flex;
+    background-color: var(--citrino-25);
+}
+
+.sidebar .greeting {
+    padding-bottom: 4.8rem;
+    border-bottom: .1rem solid var(--Paper);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .8rem;
+}
+
+.sidebar .greeting strong {
+    font-weight: 700;
+    color: var(--Office);
+}
+
+.sidebar .tab-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .aside-item {
+    padding: 1.6rem 2.4rem;
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    justify-content: flex-start;
+    color: var(--Office);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.main-container {
+    width: 100%;
+    padding-block: 4.8rem;
+    color: var(--Office);
+}
+
+.main-container main {
+    padding: 2.4rem 4.8rem;
+    border-radius: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4.8rem;
+    background-color: var(--white);
+}
+
+.main-container main h1 {
+    width: 100%;
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--citrino-medium);
+}
+
+.main-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.main-container form .form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.main-container form .form-fields > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.main-container form label {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    color: var(--Office);
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.main-container form input {
+    width: 100%;
+    padding: 1.2rem 1.8rem;
+    border: .2rem solid var(--office-15);
+    border-radius: 1.2rem;
+}
+
+.main-container form input[type="text"]::placeholder {
+    color: var(--office-30);
+    font-style: italic;
+}
+
+.main-container form button[type="submit"] {
+    padding: 1.2rem;
+    border-radius: .6rem;
+    color: var(--Office);
+    background-color: var(--Citrino);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+footer {
+    margin-top: 0;
+}
+
+/* States */
+.sidebar li.active {
+    background-image: 
+        linear-gradient(90deg, rgb(197, 253, 1, 0) 0%, rgb(197, 253, 1, .25) 100%);
+    font-weight: 700;
+    color: var(--citrino-dark);
+    border-right: .4rem solid var(--citrino-medium);
+}
+
+.sidebar li.active svg path {
+    fill: var(--citrino-dark);
+}

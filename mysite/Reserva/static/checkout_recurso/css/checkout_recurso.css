@@ -1,0 +1,269 @@
+/* [Font] Fira Sans (400-500-700) */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;700&display=swap');
+:root {
+    font-size: 62.5%; /* 1rem = 10px */
+    
+    /* Main */
+    --Citrino: #C5FD01;
+    --Coral: #FD2600;
+        /* Variants */
+        --citrino-dark: #7DA000;
+        --citrino-medium: #A1CF00;
+    /* Background */
+    --bg-citrino: #EBEEE3;
+    /* Monocromatics */
+    --white: #FFFFFF;
+    --Paper: #EDEDEF;
+    --Office: #413D49;
+        /* Opacity */
+        --citrino-25: #F0FEBF;
+        --office-70: #7A7780;
+        --office-30: #C6C5C8;
+        --office-15: #E3E2E4;
+    /* Utils */
+    --height-navbar: 7.2rem;
+}
+body{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: "Fira Sans", sans-serif;
+}
+.container {
+    padding: 20px;
+    margin: 10px;
+    border: none;
+    width: 816px;
+    height: 580;
+    background-color: #FFFFFF;
+    
+}
+.agenda {
+    color: var(--citrino-medium);
+    font-size: 2.4rem;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+}
+.data {
+    display: flex;
+    border: none;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    gap: 3.2rem;
+    color: var(--Office);
+}
+.data_conteudo {
+    display: flex;
+}
+.conteudo {
+    flex-direction: column;
+    display: flex;
+    text-align: center;
+}
+.conteudo h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+.conteudo span{
+    font-size: 1.2rem;
+    
+}
+.linha-vertical { 
+    width: 0.2rem; 
+    height: 10rem; 
+    background-color: var(--Paper); 
+}
+.data_hora {
+    display: flex;
+    font-size: 2.4rem;
+    align-items: center;
+    justify-content: center;
+}
+.icone_calendario {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+.reservas {
+    color: var(--citrino-dark);
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 2.1rem;
+}
+.reservas_cabecalho {
+    display: flex;
+    font-size: 12px;
+    color: var(--Office);
+    font-weight: bolder;
+}
+.status {
+    margin-right: 65px;
+}
+.organizador {
+    margin-right: 65px;
+}
+.recurso {
+    margin-right: 65px;
+}
+.checkin {
+    margin-right: 65px;
+}
+.checkin {
+    margin-right: 65px;
+}
+.reservas_linha_um{
+    display: flex;
+    text-align: center;
+    margin-bottom: 10px;
+    border: none;
+}
+.reservas_linha_um .status {
+    width: 68px;
+    height: 20px;
+    margin-top: 10px;
+    background-color: var(--office-30);
+}
+.reservas_linha_um .status .conteudo{
+    font-weight: bold;
+    font-size: 10px;
+    color: var(--Office);
+}
+.reservas_linha_um .organizador .icone {
+    align-items: left;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+}
+.reservas_linha_um .organizador .conteudo {
+    font-size: 12px;
+    display: inline-block;
+    color: var(--citrino-dark);
+    align-items: left;
+}
+.reservas_linha_um .recurso .conteudo {
+    font-size: 12px;
+    display: inline-block;
+    color: var(--Office);
+}
+.reservas_linha_um .checkin .conteudo {
+    font-size: 12px;
+    display: inline-block;
+    color: var(--Office);
+}
+.reservas_linha_um .acoes button{
+    width: 72px;
+    height: 26px;
+    background-color: #FD2600;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    
+}
+th, td {
+    padding: 12px;
+    border-collapse: collapse;
+    border: none;
+    border-bottom: none;
+    text-align: left;
+    color: var(--Office);
+    font-size: 12px;
+}
+th {
+    background-color: #f2f2f2;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--Office);
+}
+button {
+    padding: 6px 12px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+}
+table td img {
+    width: 24px; /* Tamanho ajustado */
+    height: 24px; /* Tamanho ajustado */
+    border-radius: 50%;
+}
+.reservado {
+    padding: 6px 12px;
+    background-color: #C6C5C8; /* Cor fixa do botão RESERVADO */
+    color: var(--Office);
+    border: none;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: bold;
+    align-items: center;
+}
+/* Estilo para o botão CANCELAR (cor fixa) */
+.cancelar-button {
+    padding: 6px 12px;
+    background-color: #FD2600; /* Cor fixa do botão CANCELAR */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+.checkout-button {
+    padding: 6px 12px;
+    background-color: var(--Citrino); /* Cor fixa do botão CANCELAR */
+    color: var(--Office);
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+table tr {
+    border: none;
+}
+table tr, table th {
+    background-color: transparent; 
+}
+table td, table th {
+    border-left: none;
+    border-right: none;
+}
+table tr {
+    border: none;
+}
+table tr:last-child {
+    border-top: 2px solid #C6C5C8; 
+}
+table th, table td {
+    border-top: 1px solid #ddd; 
+    border-bottom: 1px solid #ddd; 
+    background-color: transparent; 
+}
+.sarah-eastern {
+    color: #7DA000;
+    font-size: 12px;
+}
+.checkout {
+    padding: 6px 12px;
+    background-color: #fbf0c3;
+    color: #F39C12;
+    border: none;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: bold;
+    align-items: center;
+}
+.concluido {
+    padding: 6px 12px;
+    background-color: var(--citrino-25); 
+    color: var(--citrino-dark);
+    border: none;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: bold;
+    align-items: center;
+}

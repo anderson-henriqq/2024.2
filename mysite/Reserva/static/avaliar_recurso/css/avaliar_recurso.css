@@ -1,0 +1,255 @@
+body > main {
+    padding-inline: 31.2rem;
+}
+
+.main-container {
+    width: 100%;
+    padding: 3.2rem;
+    border-radius: 1.2rem;
+    display: flex;
+    background-color: var(--white);
+}
+
+.main-container main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start ;
+    gap: 4.8rem;
+}
+
+.reservas-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+.reservas-container .title {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--citrino-dark);
+}
+
+.reservas-container ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+}
+
+.reservas-container ul li {
+    padding: 2.4rem;
+    border: .2rem solid var(--Paper);
+    border-radius: .6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.reservas-container .indicator {
+    width: max-content;
+    padding: .2rem .8rem;
+    border-radius: .2rem;
+    display: flex;
+    color: var(--Blame);
+    background-color: var(--sunflower-25);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.reservas-container .info {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.reservas-container .recurso {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--Office);
+}
+
+.reservas-container .espaco {
+    font-size: 1.4rem;
+    color: var(--office-30);
+}
+
+.reservas-container .espaco a {
+    font-weight: 700;
+    color: var(--citrino-medium);
+}
+
+.reservas-ativas button,
+.reservas-concluidas button {
+    padding: .8rem 1.2rem;
+    border-radius: .6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+    font-weight: 700;
+}
+
+.reservas-ativas button {
+    background-color: var(--Citrino);
+}
+
+.reservas-concluidas button {
+    border: .2rem solid var(--SunFlower);
+    color: var(--SunFlower);
+    background-color: transparent;
+}
+
+/* ===== Modal =============== */
+.modal-avaliar-recurso {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    width: 40rem;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5.8rem;
+    background-color: var(--white);
+}
+
+.modal-content .close {
+    cursor: pointer;
+}
+
+.modal-content header {
+    position: relative;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 1.2rem; right: 1.2rem;
+}
+
+.modal-content .cover {
+    border-radius: 1.2rem 1.2rem 0 0;
+}
+
+.modal-content .avatar {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: .4rem solid var(--white);
+    border-radius: 999px;
+}
+
+.modal-content .body {
+    padding: 0 2.4rem 2.4rem 2.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.modal-avaliar-recurso .title {
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--citrino-medium);
+}
+
+.modal-avaliar-recurso .title strong {
+    font-weight: 700;
+}
+
+.modal-avaliar-recurso form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.modal-avaliar-recurso .rating-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.modal-avaliar-recurso .rating-group > div {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    font-weight: 500;
+    color: var(--Office);
+}
+
+.rating input[type="radio"] {
+    display: none;
+}
+
+.rating input[type="radio"]:checked ~ label svg path,
+.rating input[type="radio"]:hover ~ label svg path {
+    fill: var(--Coral);
+}
+
+.modal-avaliar-recurso .rating svg {
+    transition: fill 0.3s ease;
+    cursor: pointer;
+}
+
+.modal-avaliar-recurso .feedback {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    color: var(--office-70);
+}
+
+.modal-avaliar-recurso .feedback label {
+    font-weight: 500;
+}
+
+.modal-avaliar-recurso .feedback textarea {
+    height: 7.2rem;
+    padding: .8rem 1.2rem;
+    border: .1rem solid var(--Paper);
+    border-radius: .6rem;
+    resize: none;
+}
+
+.modal-avaliar-recurso .feedback textarea::placeholder {
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--office-30);
+}
+
+.modal-avaliar-recurso button[type="submit"] {
+    padding: 1.2rem;
+    border-radius: .6rem;
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--Office);
+    background-color: var(--Citrino);
+}
+
+/* States */
+.indicator.done {
+    color: var(--citrino-dark);
+    background-color: var(--citrino-25);
+}
+
+.reservas-container ul li.checkin button {
+    font-weight: 400;
+    color: var(--citrino-medium);
+    background-color: var(--citrino-25);
+}

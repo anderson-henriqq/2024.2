@@ -1,0 +1,158 @@
+body {
+    height: 100vh;
+    background-color: var(--office-70);
+}
+
+/* Common */
+.center, .center .text, .center .subtitle, 
+.tags, .tags .tag,
+.fractal {
+    display: flex;
+}
+
+.center {
+    position: absolute;
+    top: 26rem; left: 50%;
+    transform: translateX(-50%);
+    flex-direction: column;
+    align-items: center;
+    gap: 3.2rem;
+}
+
+.center .text {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.center .title {
+    font-size: 4.8rem;
+}
+
+.center .title strong {
+    color: var(--Citrino);
+}
+
+.center .subtitle {
+    font-size: 2.4rem;
+    align-items: center;
+    gap: .8rem;
+}
+
+.search-box .locate, 
+.search-box .btn-search {
+    display: flex;
+    align-items: center;
+}
+
+.search-box,
+.search-box input {
+    width: 100%;
+}
+
+.search-box {
+    height: fit-content;
+    border-radius: 1.2rem;
+    background-color: var(--white);
+    border: .2rem solid var(--Paper);
+    max-width: 50.4rem;
+    padding: .6rem .6rem .6rem 1.8rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-box .actions {
+    display: flex;
+    align-items: center;
+}
+
+.search-box .locate {
+    gap: .8rem;
+    padding-inline: 1.2rem;
+}
+
+.search-box .locate span {
+    color: var(--office-70);
+}
+
+.search-box .btn-search {
+    padding: .9rem;
+    border-radius: .6rem;
+    background-color: var(--Citrino);
+}
+
+[placeholder]::placeholder {
+    font-style: italic;
+    color: var(--office-30);
+}
+
+.tags {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.tags .tag {
+    width: fit-content;
+    padding: .4rem .8rem;
+    border: .1rem solid var(--white);
+    border-radius: 999px;
+    color: var(--white);
+    background-color: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(1.6rem);
+}
+
+.fractal {
+    height: 100%;
+}
+
+.fractal div[class^="fr-"] {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.fr-1 { 
+    background-image: 
+        linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.1) 25%),
+        linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.5) 100%),
+        linear-gradient(180deg, rgba(197,253,1,0) 0%, rgba(197,253,1,.5) 100%),
+        url("../img/voleyball.webp"); 
+}
+
+.fr-2 { 
+    background-image: 
+        linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.1) 25%),
+        linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.5) 100%),
+        linear-gradient(180deg, rgba(197,253,1,0) 0%, rgba(197,253,1,.5) 100%),
+        url("../img/tenis.webp");
+}
+
+.fr-3 { 
+    background-image: 
+        linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.1) 25%),
+        linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.5) 100%),
+        linear-gradient(180deg, rgba(197,253,1,0) 0%, rgba(197,253,1,.5) 100%),
+        url("../img/soccer.webp");
+}
+
+.fr-4 { 
+    background-image: 
+        linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.1) 25%),
+        linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.5) 100%),
+        linear-gradient(180deg, rgba(197,253,1,0) 0%, rgba(197,253,1,.5) 100%),
+        url("../img/basketball.webp");
+}
+
+.fr-5 { 
+    background-image: 
+        linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.1) 25%),
+        linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.5) 100%),
+        linear-gradient(180deg, rgba(197,253,1,0) 0%, rgba(197,253,1,.5) 100%),
+        url("../img/futsal.webp");
+}

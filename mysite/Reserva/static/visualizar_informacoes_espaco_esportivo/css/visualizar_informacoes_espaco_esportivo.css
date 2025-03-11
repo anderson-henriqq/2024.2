@@ -1,0 +1,491 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Manual insert */
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: inherit; /* Manter a cor padrão para todos os estados */
+  text-decoration: none; /* Remover sublinhado para todos os estados */
+}
+
+button,
+input,
+hr {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+iframe,
+img {
+  vertical-align: bottom;
+}
+
+/* NAVBAR */
+/* [Font] Fira Sans (400-500-700) */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;700&display=swap");
+
+:root {
+  font-size: 62.5%; /* 1rem = 10px */
+
+  /* Main */
+  --Citrino: #c5fd01;
+  --Coral: #fd2600;
+  /* Variants */
+  --citrino-dark: #7da000;
+  --citrino-medium: #a1cf00;
+  /* Background */
+  --bg-citrino: #ebeee3;
+  /* Monocromatics */
+  --white: #ffffff;
+  --Paper: #ededef;
+  --Office: #413d49;
+  /* Opacity */
+  --citrino-25: #f0febf;
+  --office-70: #7a7780;
+  --office-30: #c6c5c8;
+  --office-15: #e3e2e4;
+
+  /* Utils */
+  --height-navbar: 7.2rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  padding: calc(var(--height-navbar) + 3.2rem) 10.4rem 0 10.4rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1.6rem;
+  /* background-color: var(--bg-citrino); */
+  background-color: var(--white);
+  overflow-x: hidden;
+}
+
+/* Common */
+.nav-bar,
+.nav-bar nav,
+.nav-links,
+.nav-links li,
+.nav-links a {
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar nav {
+  width: 100%;
+}
+
+.nav-bar nav,
+.nav-links,
+.nav-links li,
+.nav-links li a {
+  height: 100%;
+}
+
+/* ===== NAVBAR =============== */
+.nav-bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: var(--height-navbar);
+  padding-inline: 10.4rem;
+  background-color: var(--citrino-dark);
+}
+
+.nav-bar nav {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-bar .user-notifications {
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar .user {
+  min-width: 19.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.nav-bar .user-img {
+  display: flex;
+  width: 4.8rem;
+  aspect-ratio: 1;
+}
+
+.nav-bar .user-img img {
+  border: 0.2rem solid var(--Citrino);
+  border-radius: 999px;
+}
+
+.nav-bar .info {
+  display: flex;
+  flex-direction: column;
+  gap: 2;
+}
+
+.nav-bar .nome {
+  color: var(--white);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.nav-bar .tipo {
+  color: var(--Citrino);
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.nav-bar .notification {
+  display: flex;
+}
+
+.nav-links {
+  gap: 3.2rem;
+}
+
+.nav-links li {
+  color: var(--Paper);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.nav-links a {
+  gap: 0.4rem;
+}
+
+/* States */
+.nav-links li.active {
+  font-weight: 700;
+  color: var(--white);
+  border-bottom: 0.4rem solid var(--Citrino);
+}
+
+.nav-links li.active svg path {
+  fill: var(--Citrino);
+}
+
+/* SECTION */
+.section {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 500px;
+  width: 800px;
+  gap: 2.2rem;
+}
+
+.title {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 1.85rem;
+  text-transform: uppercase;
+  color: var(--citrino-dark);
+  font-weight: 500;
+}
+
+.mapa-contato {
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* MAIN */
+main {
+  background-color: var(--bg-citrino);
+  height: 450px;
+  margin-bottom: 20px;
+  width: 100vw;
+  display: grid;
+  justify-content: center;
+}
+
+.caixa {
+  height: 450px;
+  width: 800px;
+  padding: 50px 0px;
+}
+
+.flex-item-3 {
+  display: flex;
+  gap: 10px;
+  place-items: center;
+}
+
+.flex-item-3 h2 {
+  font-size: 1.85rem;
+  text-transform: uppercase;
+  color: var(--citrino-dark);
+  font-weight: 500;
+}
+
+.box-icon {
+  cursor: pointer;
+  background-color: #ffffff;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  padding-top: 25%;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.flex-item-4 {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.recurso {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.recurso svg {
+  border-radius: 6px 6px 0px 0px;
+}
+
+.caixa-descricao {
+  background-color: #ffffff;
+  padding: 10px 20px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 0px 0px 6px 6px;
+}
+
+.caixa-descricao h3 {
+  color: var(--citrino-dark);
+  font-weight: 550;
+  text-transform: uppercase;
+}
+
+.botao-reservar {
+  background-color: var(--Citrino);
+  border-radius: 4px;
+  display: inline-block;
+  padding: 10px 15px;
+  display: flex;
+  gap: 10px;
+  place-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.flex-principal {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.icones-passar {
+  display: flex;
+  gap: 10px;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.icones-passar svg {
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--bg-citrino);
+  height: 450px;
+  margin-bottom: 20px;
+  width: 100vw;
+  display: grid;
+  justify-content: center;
+  margin-bottom: 0px;
+}
+
+.caixa-2 {
+  height: 450px;
+  width: 800px;
+  padding: 50px 0px;
+}
+
+.flex-item-5 {
+  display: flex;
+  gap: 10px;
+}
+
+.flex-item-5 h2 {
+  font-size: 1.85rem;
+  text-transform: uppercase;
+  color: var(--citrino-dark);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.perguntas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pergunta-1 {
+  background-color: #ffffff;
+  border-radius: 6px;
+  padding: 15px 30px;
+}
+
+.pergunta-1 div {
+  display: flex;
+  align-items: center;
+}
+
+.pergunta-1 div:first-child {
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.pergunta-1 div:last-child {
+  gap: 5px;
+  margin-left: 20px;
+}
+
+.txt-pergunta {
+  color: var(--Office);
+  font-weight: 600;
+}
+
+.pergunta-2 {
+  background-color: #ffffff;
+  border-radius: 6px;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pergunta-1 svg,
+.pergunta-1 p,
+.pergunta-2 svg,
+.pergunta-2 p {
+  cursor: pointer;
+}
+
+/* ARTICLE */
+.article-footer {
+  position: relative;
+  z-index: -1;
+  margin-bottom: 150px;
+}
+
+.box-informs {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  top: 180px;
+  left: 30px;
+}
+
+.flex-item-1 {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.flex-item-2 {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.nome-espaco {
+  color: var(--citrino-medium);
+  font-size: 2.25rem;
+  font-weight: bold;
+}
+
+.txt-localizacao {
+  color: var(--office-30);
+}
+
+.estilo-nota {
+  color: var(--office-70);
+  font-weight: bold;
+}
+
+.estilo-avaliacaos {
+  color: var(--office-70);
+}

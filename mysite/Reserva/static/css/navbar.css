@@ -1,0 +1,129 @@
+/* Common */
+.nav-bar,
+.nav-bar nav,
+.nav-links,
+.nav-links li,
+.nav-links a {
+    display: flex;
+    align-items: center;
+}
+.nav-bar nav {
+    width: 100%;
+}
+.nav-bar nav,
+.nav-links, 
+.nav-links li,
+.nav-links li a {
+    height: 100%;
+}
+/* ===== NAVBAR =============== */
+.nav-bar {
+    position: fixed;
+    left: 0; top: 0;
+    width: 100vw;
+    height: var(--height-navbar);
+    padding-inline: 10.4rem;
+    background-color: var(--white);
+    box-shadow: 0 .6rem 1.2rem rgba(65, 61, 73, .25);
+}
+.nav-bar nav {
+    flex-direction: row;
+    justify-content: space-between;
+}
+.nav-bar .user-actions {
+    height: 4.8rem; /* NÃO está flexível */
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+.nav-bar .user {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+.nav-bar .user-img {
+    display: flex;
+    width: 4.8rem;
+    aspect-ratio: 1;
+}
+.nav-bar .user-img img {
+    border: .2rem solid var(--citrino-dark);
+    border-radius: 999px;
+}
+.nav-bar .info {
+    display: flex;
+    flex-direction: column;
+    gap: 2;
+}
+.nav-bar .name {
+    color: var(--citrino-dark);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+.nav-bar .type {
+    color: var(--citrino-medium);
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.nav-bar .actions {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-left: .1rem solid var(--citrino-dark);
+}
+
+.nav-bar .logout {
+    height: min-content;
+    padding-left: 1.2rem;
+    display: flex;
+    align-items: center;
+    color: var(--Coral);
+    font-weight: 500;
+}
+
+.nav-links li {
+    padding: 1.6rem;
+    color: var(--Office);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.nav-links a {
+    gap: .4rem;
+}
+/* States */
+.nav-links li.active {
+    background-image: 
+        linear-gradient(180deg, rgb(197, 253, 1, 0) 0%, rgb(197, 253, 1, .25) 100%);
+    font-weight: 700;
+    color: var(--citrino-dark);
+    border-bottom: .4rem solid var(--citrino-medium);
+}
+.nav-links li.active svg path {
+    fill: var(--citrino-dark);
+}
+
+.signin-signup {
+    min-width: 29.6rem;
+    gap: 1.2rem;
+}
+
+.signin-signup button {
+    height: 4.8rem;
+    padding-inline: 2.4rem;
+    border-radius: .6rem;
+    font-weight: 700;
+}
+
+.btn-signup {
+    background-color: transparent;
+    border: .2rem solid var(--Citrino);
+    color: var(--Citrino);
+}
+
+.btn-signin {
+    min-width: 13rem;
+    background-color: var(--Citrino);
+    color: var(--Office);
+}
