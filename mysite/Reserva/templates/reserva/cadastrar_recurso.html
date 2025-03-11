@@ -1,0 +1,114 @@
+{% extends "./cadastrar_espaco_esportivo.html" %}
+
+{% load static %}
+
+{% block title %}
+    Cadastrar Recurso
+{% endblock %}
+
+{% block css %}
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'cadastrar_espaco_esportivo/css/cadastrar_espaco_esportivo.css' %}">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'cadastrar_recurso/css/cadastrar_recurso.css' %}">
+{% endblock %}
+
+{% block form_title %}
+    Cadastrar Recurso em ?Nome_Espaco_Esportivo?
+{% endblock %}
+
+{% block form_fields %}
+    <div class="form-fields">
+        <div>
+            <label for="nome-recurso">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 16.0001L11 20.0001H21V16.0001H15ZM12.06 7.19006L3 16.2501V20.0001H6.75L15.81 10.9401L12.06 7.19006ZM5.92 18.0001H5V17.0801L12.06 10.0001L13 10.9401L5.92 18.0001ZM18.71 8.04006C19.1 7.65006 19.1 7.00006 18.71 6.63006L16.37 4.29006C16.1826 4.10381 15.9292 3.99927 15.665 3.99927C15.4008 3.99927 15.1474 4.10381 14.96 4.29006L13.13 6.12006L16.88 9.87006L18.71 8.04006Z" fill="#A1CF00"/>
+                </svg>
+                    
+                Nome do Recurso
+            </label>
+
+            <input type="text" id="nome-recurso" name="nome-recurso" placeholder="Informe o nome do recurso do Espaço Esportivo...">
+        </div>
+
+        <div>
+            <label for="modalidade">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.41 11.58L12.41 2.58C12.035 2.20808 11.5281 1.99958 11 2H4C3.46957 2 2.96086 2.21071 2.58579 2.58579C2.21071 2.96086 2 3.46957 2 4V11C1.99979 11.2639 2.05182 11.5253 2.15308 11.769C2.25434 12.0127 2.40283 12.2339 2.59 12.42L11.59 21.42C11.965 21.7919 12.4719 22.0004 13 22C13.5296 21.9978 14.0367 21.7856 14.41 21.41L21.41 14.41C21.7856 14.0367 21.9978 13.5296 22 13C22.0002 12.7361 21.9482 12.4747 21.8469 12.231C21.7457 11.9873 21.5972 11.7661 21.41 11.58ZM13 20L4 11V4H11L20 13M6.5 5C6.79667 5 7.08668 5.08797 7.33336 5.2528C7.58003 5.41762 7.77229 5.65189 7.88582 5.92598C7.99935 6.20006 8.02906 6.50166 7.97118 6.79264C7.9133 7.08361 7.77044 7.35088 7.56066 7.56066C7.35088 7.77044 7.08361 7.9133 6.79264 7.97118C6.50166 8.02906 6.20006 7.99935 5.92598 7.88582C5.65189 7.77229 5.41762 7.58003 5.2528 7.33336C5.08797 7.08668 5 6.79667 5 6.5C5 6.10218 5.15804 5.72064 5.43934 5.43934C5.72064 5.15804 6.10218 5 6.5 5Z" fill="#A1CF00"/>
+                </svg>
+                    
+                Tipo do Recurso
+            </label>
+
+            <select name="modalidade" id="modalidade">
+                <option value="" selected>Distância</option>
+                <option value="">Lorem</option>
+                <option value="">Ipsum</option>
+            </select>
+        </div>
+
+        <div>
+            <span class="label">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 22C4.45 22 3.97933 21.8043 3.588 21.413C3.19667 21.0217 3.00067 20.5507 3 20V6C3 5.45 3.196 4.97933 3.588 4.588C3.98 4.19667 4.45067 4.00067 5 4H6V2H8V4H16V2H18V4H19C19.55 4 20.021 4.196 20.413 4.588C20.805 4.98 21.0007 5.45067 21 6V20C21 20.55 20.8043 21.021 20.413 21.413C20.0217 21.805 19.5507 22.0007 19 22H5ZM5 20H19V10H5V20ZM5 8H19V6H5V8ZM12 14C11.7167 14 11.4793 13.904 11.288 13.712C11.0967 13.52 11.0007 13.2827 11 13C10.9993 12.7173 11.0953 12.48 11.288 12.288C11.4807 12.096 11.718 12 12 12C12.282 12 12.5197 12.096 12.713 12.288C12.9063 12.48 13.002 12.7173 13 13C12.998 13.2827 12.902 13.5203 12.712 13.713C12.522 13.9057 12.2847 14.0013 12 14ZM8 14C7.71667 14 7.47933 13.904 7.288 13.712C7.09667 13.52 7.00067 13.2827 7 13C6.99933 12.7173 7.09533 12.48 7.288 12.288C7.48067 12.096 7.718 12 8 12C8.282 12 8.51967 12.096 8.713 12.288C8.90633 12.48 9.002 12.7173 9 13C8.998 13.2827 8.902 13.5203 8.712 13.713C8.522 13.9057 8.28467 14.0013 8 14ZM16 14C15.7167 14 15.4793 13.904 15.288 13.712C15.0967 13.52 15.0007 13.2827 15 13C14.9993 12.7173 15.0953 12.48 15.288 12.288C15.4807 12.096 15.718 12 16 12C16.282 12 16.5197 12.096 16.713 12.288C16.9063 12.48 17.002 12.7173 17 13C16.998 13.2827 16.902 13.5203 16.712 13.713C16.522 13.9057 16.2847 14.0013 16 14ZM12 18C11.7167 18 11.4793 17.904 11.288 17.712C11.0967 17.52 11.0007 17.2827 11 17C10.9993 16.7173 11.0953 16.48 11.288 16.288C11.4807 16.096 11.718 16 12 16C12.282 16 12.5197 16.096 12.713 16.288C12.9063 16.48 13.002 16.7173 13 17C12.998 17.2827 12.902 17.5203 12.712 17.713C12.522 17.9057 12.2847 18.0013 12 18ZM8 18C7.71667 18 7.47933 17.904 7.288 17.712C7.09667 17.52 7.00067 17.2827 7 17C6.99933 16.7173 7.09533 16.48 7.288 16.288C7.288 16.288 7.718 16 8 16C8.282 16 8.51967 16.096 8.713 16.288C8.90633 16.48 9.002 16.7173 9 17C8.998 17.2827 8.902 17.5203 8.712 17.713C8.522 17.9057 8.28467 18.0013 8 18ZM16 18C15.7167 18 15.4793 17.904 15.288 17.712C15.0967 17.52 15.0007 17.2827 15 17C14.9993 16.7173 15.0953 16.48 15.288 16.288C15.4807 16.096 15.718 16 16 16C16.282 16 16.5197 16.096 16.713 16.288C16.9063 16.48 17.002 16.7173 17 17C16.998 17.2827 16.902 17.5203 16.712 17.713C16.522 17.9057 16.2847 18.0013 16 18Z" fill="#A1CF00"/>
+                </svg>
+                    
+                Disponibilidade de Dias
+            </span>
+
+            <div class="day-toggles">
+                <input type="checkbox" id="seg" name="dias[]" value="seg">
+                <label for="seg">SEG</label>
+            
+                <input type="checkbox" id="ter" name="dias[]" value="ter">
+                <label for="ter">TER</label>
+            
+                <input type="checkbox" id="qua" name="dias[]" value="qua">
+                <label for="qua">QUA</label>
+            
+                <input type="checkbox" id="qui" name="dias[]" value="qui">
+                <label for="qui">QUI</label>
+            
+                <input type="checkbox" id="sex" name="dias[]" value="sex">
+                <label for="sex">SEX</label>
+            
+                <input type="checkbox" id="sab" name="dias[]" value="sab">
+                <label for="sab">SAB</label>
+            
+                <input type="checkbox" id="dom" name="dias[]" value="dom">
+                <label for="dom">DOM</label>
+              </div>
+        </div>
+
+        <div>
+            <label for="horarios">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z" fill="#A1CF00"/>
+                    <path d="M12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z" fill="#A1CF00"/>
+                </svg>
+                    
+                Disponibilidade de Horários
+            </label>
+
+            <div class="time-inputs">
+                <input type="time" id="inicio" name="inicio" value="00:00">
+                <span class="separator">às</span>
+                <input type="time" id="fim" name="fim" value="00:00">
+            </div>
+        </div>
+
+        <div>
+            <label for="fotos">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 19L12 14L13.88 15.88C13.33 16.79 13 17.86 13 19H7ZM10 10.5C10 9.67 9.33 9 8.5 9C7.67 9 7 9.67 7 10.5C7 11.33 7.67 12 8.5 12C9.33 12 10 11.33 10 10.5ZM13.09 20H6V4H13V9H18V13.09C18.33 13.04 18.66 13 19 13C19.34 13 19.67 13.04 20 13.09V8L14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 21.11 4.89 22 6 22H13.81C13.46 21.39 13.21 20.72 13.09 20ZM18 15V18H15V20H18V23H20V20H23V18H20V15H18Z" fill="#A1CF00"/>
+                </svg>
+
+                Fotos do Recurso
+            </label>
+
+            <input type="file" id="fotos" name="fotos" accept="image/*" multiple>
+        </div>
+
+        <button type="submit">Cadastrar Recurso</button>
+    </div>
+{% endblock %}

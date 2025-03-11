@@ -1,0 +1,15 @@
+{% extends "./navbar_default.html" %}
+
+{% load static %}
+
+{% block css %}
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/navbar_non_login.css' %}">
+{% endblock %}
+
+{% block account_or_signinup %}
+    <div class="signin-signup">
+        <button class="btn-signup">Criar Conta</button>
+        <button class="btn-signin">Entrar</button>
+    </div>
+{% endblock %}

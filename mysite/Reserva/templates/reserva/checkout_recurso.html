@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Agenda - {{ recurso.nome }}</title>
+    <link rel="stylesheet" href="{% static 'visualizar_agenda_recurso/css/visualizar_agenda_recurso.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+</head>
+
+<body>
+    {% include 'reserva/navbar_default.html' %}
+
+    <main class="container">
+        <div class="agenda">AGENDA - {{ recurso.nome }}</div>
+
+        <div class="data-e-hora">
+            <div class="data">
+                <img class="icone_calendario" src="{% static 'visualizar_agenda_recurso/img/calendario.png' %}"
+                    alt="icone calendario">
+                <div class="conteudo">
+                    <h1>01</h1>
+                    <span>JANEIRO 2025</span>
+                </div>
+            </div>
+            <div class="data_hora">
+                <img class="icone_relogio" src="{% static 'visualizar_agenda_recurso/img/relogio.png' %}"
+                    alt="icone relogio">
+                15:47:09
+            </div>
+        </div>
+
+        <section class="reservas-section">
+            <div class="reservas">RESERVAS</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Organizador</th>
+                        <th>Recurso</th>
+                        <th>Check-in</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for reserva in reservas %}
+                    <tr>
+                        <td><span class="status reservado">Reservado</span></td>
+                        <td>
+                            <img src="https://i.pravatar.cc/300" alt="">
+                            <span class="sarah-eastern">{{ reserva.organizador.nome }}</span>
+                        </td>
+                        <td>{{ reserva.horario.recurso.nome }}</td>
+                        <td>{{ reserva.horario.dia|date:'d/m/Y' }} - {{ reserva.horario.h_inicial|date:'H:i' }}</td>
+                        <td><button class="cancelar-button">Cancelar</button></td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="5">Nenhuma reserva encontrada para este recurso.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <section class="checkout-section">
+            <div class="reservas">CHECK-OUT</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Organizador</th>
+                        <th>Recurso</th>
+                        <th>Check-in</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for reserva in checkouts %}
+                    <tr>
+                        <td><span class="status checkout">Check-out</span></td>
+                        <td>
+                            <img src="https://i.pravatar.cc/300" alt="">
+                            <span class="sarah-eastern">{{ reserva.organizador.nome }}</span>
+                        </td>
+                        <td>{{ reserva.horario.recurso.nome }}</td>
+                        <td>{{ reserva.horario.dia|date:'d/m/Y' }} - {{ reserva.horario.h_inicial|date:'H:i' }}</td>
+                        <td><button class="checkout-button">Check-out</button></td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="5">Nenhuma reserva encontrada para este recurso.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <section class="concluidos-section">
+            <div class="reservas">CONCLUÍDOS</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Organizador</th>
+                        <th>Recurso</th>
+                        <th>Check-in</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for reserva in concluidos %}
+                    <tr>
+                        <td><span class="status concluido">Concluído</span></td>
+                        <td>
+                            <img src="https://i.pravatar.cc/300" alt="">
+                            <span class="sarah-eastern">{{ reserva.organizador.nome }}</span>
+                        </td>
+                        <td>{{ reserva.horario.recurso.nome }}</td>
+                        <td>{{ reserva.horario.dia|date:'d/m/Y' }} - {{ reserva.horario.h_inicial|date:'H:i' }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="4">Nenhuma reserva encontrada para este recurso.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+
+</html>

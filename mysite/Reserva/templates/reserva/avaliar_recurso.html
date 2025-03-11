@@ -1,0 +1,255 @@
+{% extends "./base.html" %}
+
+{% load static %}
+
+{% block title %}
+    Avalie sua reserva
+{% endblock %}
+
+{% block css %}
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'avaliar_recurso/css/avaliar_recurso.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="main-container">
+    <main>
+
+        <div class="reservas-container reservas-ativas">
+            <div class="title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 7V13L16.2 16.1L17 14.9L12.5 12.2V7H11ZM20 12V18H22V12H20ZM20 20V22H22V20H20ZM18 20C16.3 21.3 14.3 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2C16.8 2 20.9 5.4 21.8 10H19.7C18.8 6.6 15.7 4 12 4C7.6 4 4 7.6 4 12C4 16.4 7.6 20 12 20C14.4 20 16.5 18.9 18 17.3V20Z" fill="#A1CF00"/>
+                </svg>
+                Reservas ativas
+            </div>
+
+            <ul>
+                {% for reserva in reservas_ativas %}
+                    <li>
+                        <span class="indicator">Em andamento</span>
+                        <div class="info">
+                            <p class="recurso">{{ reserva.agenda.recurso.nome }}</p>
+                            <p class="espaco">Recurso de <a href="">{{ reserva.agenda.recurso.espaco.nome }}</a></p>
+                        </div>                        
+                        <button>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- SVG para o botão de check-in -->
+                            </svg>
+                            Fazer Check-in
+                        </button>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="reservas-container reservas-concluidas">
+            <div class="title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 20.25C4.30109 20.25 4.11032 20.171 3.96967 20.0303C3.82902 19.8897 3.75 19.6989 3.75 19.5V4.5C3.75 4.30109 3.82902 4.11032 3.96967 3.96967C4.11032 3.82902 4.30109 3.75 4.5 3.75H18.375C18.6734 3.75 18.9595 3.63147 19.1705 3.4205C19.3815 3.20952 19.5 2.92337 19.5 2.625C19.5 2.32663 19.3815 2.04048 19.1705 1.8295C18.9595 1.61853 18.6734 1.5 18.375 1.5H4.5C3.70435 1.5 2.94129 1.81607 2.37868 2.37868C1.81607 2.94129 1.5 3.70435 1.5 4.5V19.5C1.5 20.2956 1.81607 21.0587 2.37868 21.6213C2.94129 22.1839 3.70435 22.5 4.5 22.5H19.5C20.2956 22.5 21.0587 22.1839 21.6213 21.6213C22.1839 21.0587 22.5 20.2956 22.5 19.5V14.625C22.5 14.3266 22.3815 14.0405 22.1705 13.8295C21.9595 13.6185 21.6734 13.5 21.375 13.5C21.0766 13.5 20.7905 13.6185 20.5795 13.8295C20.3685 14.0405 20.25 14.3266 20.25 14.625V19.5C20.25 19.6989 20.171 19.8897 20.0303 20.0303C19.8897 20.171 19.6989 20.25 19.5 20.25H4.5ZM23.67 7.02C23.8687 6.80674 23.9769 6.52467 23.9718 6.23322C23.9666 5.94176 23.8486 5.66369 23.6424 5.45757C23.4363 5.25145 23.1582 5.13338 22.8668 5.12824C22.5753 5.1231 22.2933 5.23128 22.08 5.43L13.743 13.7655L10.9335 10.8615C10.831 10.7544 10.7083 10.6686 10.5726 10.6091C10.4368 10.5495 10.2906 10.5174 10.1424 10.5145C9.99414 10.5117 9.84681 10.5382 9.70885 10.5924C9.57089 10.6467 9.44502 10.7277 9.33847 10.8308C9.23192 10.9339 9.1468 11.057 9.088 11.1931C9.0292 11.3292 8.99788 11.4756 8.99584 11.6238C8.9938 11.7721 9.02107 11.9193 9.07611 12.0569C9.13114 12.1946 9.21283 12.32 9.3165 12.426L12.921 16.152C13.0247 16.2596 13.1488 16.3454 13.2861 16.4045C13.4233 16.4635 13.5709 16.4947 13.7204 16.4961C13.8698 16.4975 14.018 16.4691 14.1563 16.4126C14.2946 16.3561 14.4203 16.2726 14.526 16.167L23.67 7.02Z" fill="#A1CF00"/>
+                </svg>
+                Reservas concluídas
+            </div>
+
+            <ul>
+                {% for reserva in reservas_concluidas %}
+                    <li>
+                        <span class="indicator done">Concluído</span>
+                        <div class="info">
+                            <p class="recurso">{{ reserva.agenda.recurso }}</p>
+                            <p class="espaco">Recurso de <a href="">{{ reserva.agenda.espaco }}</a></p>
+                        </div>
+                        <button class="btn-avaliar">
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.5 3.94995L14.9957 9.3594L20.9117 10.0613L16.5378 14.1055L17.6988 19.9491L12.5 17.0394L7.30121 19.95L8.46222 14.1063L4.08835 10.0605L10.0051 9.35859L12.5 3.94995Z" stroke="#F1C40F" stroke-width="2.01005" stroke-linejoin="round"/>
+                            </svg>
+                            Avaliar
+                        </button>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </main>
+</div>
+
+    <div class="modal-avaliar-recurso">
+        <div class="modal-content">
+            <header>
+                <svg class="close" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z" fill="#7DA000"/>
+                </svg>
+    
+                <img src="{% static 'img/cover_default_400x100.webp' %}" alt="" class="cover">
+    
+                <img src="{% static 'img/avatar_default_100x100.webp' %}" alt="" class="avatar">
+            </header>
+    
+            <div class="body">
+                <h1 class="title" id="nome_recurso_modal">
+                    COMO FOI SUA EXPERIÊNCIA EM <strong>LOREM IPSUM DOLOR SIT AMET</strong>?
+                </h1>
+    
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="rating-group">
+                        <div>
+                          <label for="atendimento">Atendimento:</label>
+                          <div class="rating">
+                              <input type="radio" id="atendimento-1" name="atendimento" value="1">
+                              <label for="atendimento-1">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.32538 18.923L8.56538 13.61L4.44238 10.038L9.87338 9.56801L12.0004 4.55701L14.1274 9.56701L19.5574 10.037L15.4344 13.609L16.6754 18.922L12.0004 16.102L7.32538 18.923Z" fill="#C6C5C8"/>
+                                </svg>
+                              </label>
+                              <input type="radio" id="atendimento-2" name="atendimento" value="2">
+                              <label for="atendimento-2">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.32538 18.923L8.56538 13.61L4.44238 10.038L9.87338 9.56801L12.0004 4.55701L14.1274 9.56701L19.5574 10.037L15.4344 13.609L16.6754 18.922L12.0004 16.102L7.32538 18.923Z" fill="#C6C5C8"/>
+                                </svg>
+                              </label>
+                              <input type="radio" id="atendimento-3" name="atendimento" value="3">
+                              <label for="atendimento-3">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.32538 18.923L8.56538 13.61L4.44238 10.038L9.87338 9.56801L12.0004 4.55701L14.1274 9.56701L19.5574 10.037L15.4344 13.609L16.6754 18.922L12.0004 16.102L7.32538 18.923Z" fill="#C6C5C8"/>
+                                </svg>
+                              </label>
+                              <input type="radio" id="atendimento-4" name="atendimento" value="4">
+                              <label for="atendimento-4">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.32538 18.923L8.56538 13.61L4.44238 10.038L9.87338 9.56801L12.0004 4.55701L14.1274 9.56701L19.5574 10.037L15.4344 13.609L16.6754 18.922L12.0004 16.102L7.32538 18.923Z" fill="#C6C5C8"/>
+                                </svg>
+                              </label>
+                              <input type="radio" id="atendimento-5" name="atendimento" value="5">
+                              <label for="atendimento-5">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.32538 18.923L8.56538 13.61L4.44238 10.038L9.87338 9.56801L12.0004 4.55701L14.1274 9.56701L19.5574 10.037L15.4344 13.609L16.6754 18.922L12.0004 16.102L7.32538 18.923Z" fill="#C6C5C8"/>
+                                </svg>
+                              </label>
+                          </div>
+                        </div>
+                      
+                        <div>
+                          <label for="recurso">Estado do Recurso:</label>
+                          <div class="rating">
+                              <input type="radio" id="recurso-1" name="recurso" value="1">
+                              <label for="recurso-1">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.32538 18.923L8.56538 13.61L4.44238 10.038L9.87338 9.56801L12.0004 4.55701L14.1274 9.56701L19.5574 10.037L15.4344 13.609L16.6754 18.922L12.0004 16.102L7.32538 18.923Z" fill="#C6C5C8"/>
+                                </svg>
+                              </label>
+                              <input type="radio" id="recurso-2" name="recurso" value="2">
+                              <label for="recurso-2">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.32538 18.923L8.56538 13.61L4.44238 10.038L9.87338 9.56801L12.0004 4.55701L14.1274 9.56701L19.5574 10.037L15.4344 13.609L16.6754 18.922L12.0004 16.102L7.32538 18.923Z" fill="#C6C5C8"/>
+                                </svg>
+                              </label>
+                              <input type="radio" id="recurso-3" name="recurso" value="3">
+                              <label for="recurso-3">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.32538 18.923L8.56538 13.61L4.44238 10.038L9.87338 9.56801L12.0004 4.55701L14.1274 9.56701L19.5574 10.037L15.4344 13.609L16.6754 18.922L12.0004 16.102L7.32538 18.923Z" fill="#C6C5C8"/>
+                                </svg>
+                              </label>
+                              <input type="radio" id="recurso-4" name="recurso" value="4">
+                              <label for="recurso-4">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.32538 18.923L8.56538 13.61L4.44238 10.038L9.87338 9.56801L12.0004 4.55701L14.1274 9.56701L19.5574 10.037L15.4344 13.609L16.6754 18.922L12.0004 16.102L7.32538 18.923Z" fill="#C6C5C8"/>
+                                </svg>
+                              </label>
+                              <input type="radio" id="recurso-5" name="recurso" value="5">
+                              <label for="recurso-5">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.32538 18.923L8.56538 13.61L4.44238 10.038L9.87338 9.56801L12.0004 4.55701L14.1274 9.56701L19.5574 10.037L15.4344 13.609L16.6754 18.922L12.0004 16.102L7.32538 18.923Z" fill="#C6C5C8"/>
+                                </svg>
+                              </label>
+                          </div>
+                        </div>
+                      
+                        <div>
+                          <label for="limpeza">Limpeza e Organização:</label>
+                          <div class="rating">
+                              <input type="radio" id="limpeza-1" name="limpeza" value="1">
+                              <label for="limpeza-1">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.32538 18.923L8.56538 13.61L4.44238 10.038L9.87338 9.56801L12.0004 4.55701L14.1274 9.56701L19.5574 10.037L15.4344 13.609L16.6754 18.922L12.0004 16.102L7.32538 18.923Z" fill="#C6C5C8"/>
+                                </svg>
+                              </label>
+                              <input type="radio" id="limpeza-2" name="limpeza" value="2">
+                              <label for="limpeza-2">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.32538 18.923L8.56538 13.61L4.44238 10.038L9.87338 9.56801L12.0004 4.55701L14.1274 9.56701L19.5574 10.037L15.4344 13.609L16.6754 18.922L12.0004 16.102L7.32538 18.923Z" fill="#C6C5C8"/>
+                                </svg>
+                              </label>
+                              <input type="radio" id="limpeza-3" name="limpeza" value="3">
+                              <label for="limpeza-3">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.32538 18.923L8.56538 13.61L4.44238 10.038L9.87338 9.56801L12.0004 4.55701L14.1274 9.56701L19.5574 10.037L15.4344 13.609L16.6754 18.922L12.0004 16.102L7.32538 18.923Z" fill="#C6C5C8"/>
+                                </svg>
+                              </label>
+                              <input type="radio" id="limpeza-4" name="limpeza" value="4">
+                              <label for="limpeza-4">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.32538 18.923L8.56538 13.61L4.44238 10.038L9.87338 9.56801L12.0004 4.55701L14.1274 9.56701L19.5574 10.037L15.4344 13.609L16.6754 18.922L12.0004 16.102L7.32538 18.923Z" fill="#C6C5C8"/>
+                                </svg>
+                              </label>
+                              <input type="radio" id="limpeza-5" name="limpeza" value="5">
+                              <label for="limpeza-5">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.32538 18.923L8.56538 13.61L4.44238 10.038L9.87338 9.56801L12.0004 4.55701L14.1274 9.56701L19.5574 10.037L15.4344 13.609L16.6754 18.922L12.0004 16.102L7.32538 18.923Z" fill="#C6C5C8"/>
+                                </svg>
+                              </label>
+                          </div>
+                        </div>
+                      
+                        <div>
+                          <label for="seguranca">Segurança:</label>
+                          <div class="rating">
+                              <input type="radio" id="seguranca-1" name="seguranca" value="1">
+                              <label for="seguranca-1">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.32538 18.923L8.56538 13.61L4.44238 10.038L9.87338 9.56801L12.0004 4.55701L14.1274 9.56701L19.5574 10.037L15.4344 13.609L16.6754 18.922L12.0004 16.102L7.32538 18.923Z" fill="#C6C5C8"/>
+                                </svg>
+                              </label>
+                              <input type="radio" id="seguranca-2" name="seguranca" value="2">
+                              <label for="seguranca-2">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.32538 18.923L8.56538 13.61L4.44238 10.038L9.87338 9.56801L12.0004 4.55701L14.1274 9.56701L19.5574 10.037L15.4344 13.609L16.6754 18.922L12.0004 16.102L7.32538 18.923Z" fill="#C6C5C8"/>
+                                </svg>
+                              </label>
+                              <input type="radio" id="seguranca-3" name="seguranca" value="3">
+                              <label for="seguranca-3">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.32538 18.923L8.56538 13.61L4.44238 10.038L9.87338 9.56801L12.0004 4.55701L14.1274 9.56701L19.5574 10.037L15.4344 13.609L16.6754 18.922L12.0004 16.102L7.32538 18.923Z" fill="#C6C5C8"/>
+                                </svg>
+                              </label>
+                              <input type="radio" id="seguranca-4" name="seguranca" value="4">
+                              <label for="seguranca-4">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.32538 18.923L8.56538 13.61L4.44238 10.038L9.87338 9.56801L12.0004 4.55701L14.1274 9.56701L19.5574 10.037L15.4344 13.609L16.6754 18.922L12.0004 16.102L7.32538 18.923Z" fill="#C6C5C8"/>
+                                </svg>
+                              </label>
+                              <input type="radio" id="seguranca-5" name="seguranca" value="5">
+                              <label for="seguranca-5">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.32538 18.923L8.56538 13.61L4.44238 10.038L9.87338 9.56801L12.0004 4.55701L14.1274 9.56701L19.5574 10.037L15.4344 13.609L16.6754 18.922L12.0004 16.102L7.32538 18.923Z" fill="#C6C5C8"/>
+                                </svg>
+                              </label>
+                          </div>
+                        </div>
+                    </div>
+                    
+                    <div class="feedback">
+                        <label for="feedback">Compartilhe seu feedback (opcional):</label>
+                        <textarea id="feedback" name="feedback" placeholder="Compartilhe seus elogios, críticas ou sugestões..."></textarea>
+                    </div>
+                  
+                    <button type="submit">Avaliar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    {% static "avaliar_recurso/js/main.js" %}
+{% endblock %}

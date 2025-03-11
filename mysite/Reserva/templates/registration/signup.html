@@ -1,0 +1,100 @@
+{% extends "./login.html" %}
+
+{% load static %}
+
+{% block title %}
+    Crie sua conta
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'registration/css/signup.css' %}">
+{% endblock %}
+
+{% block title_form %}
+    Crie sua conta
+{% endblock %}
+
+{% block form_fields %}
+    <form method="POST">
+        {% csrf_token %}
+        
+        <div class="form-fields">
+            <div class="nome-field">
+                <label for="id_nome">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 16.0001L11 20.0001H21V16.0001H15ZM12.06 7.19006L3 16.2501V20.0001H6.75L15.81 10.9401L12.06 7.19006ZM5.92 18.0001H5V17.0801L12.06 10.0001L13 10.9401L5.92 18.0001ZM18.71 8.04006C19.1 7.65006 19.1 7.00006 18.71 6.63006L16.37 4.29006C16.1826 4.10381 15.9292 3.99927 15.665 3.99927C15.4008 3.99927 15.1474 4.10381 14.96 4.29006L13.13 6.12006L16.88 9.87006L18.71 8.04006Z" fill="#A1CF00"/>
+                    </svg>
+                    Nome e Sobrenome
+                </label>
+                {{ form.nome }}
+            </div>    
+
+            <div class="username-field">
+                <label for="id_username">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 15C12.81 15 13.5 14.7 14.11 14.11C14.7 13.5 15 12.81 15 12C15 11.19 14.7 10.5 14.11 9.89C13.5 9.3 12.81 9 12 9C11.19 9 10.5 9.3 9.89 9.89C9.3 10.5 9 11.19 9 12C9 12.81 9.3 13.5 9.89 14.11C10.5 14.7 11.19 15 12 15ZM12 2C14.75 2 17.1 3 19.05 4.95C21 6.9 22 9.25 22 12V13.45C22 14.45 21.65 15.3 21 16C20.3 16.67 19.5 17 18.5 17C17.3 17 16.31 16.5 15.56 15.5C14.56 16.5 13.38 17 12 17C10.63 17 9.45 16.5 8.46 15.54C7.5 14.55 7 13.38 7 12C7 10.63 7.5 9.45 8.46 8.46C9.45 7.5 10.63 7 12 7C13.38 7 14.55 7.5 15.54 8.46C16.5 9.45 17 10.63 17 12V13.45C17 13.86 17.16 14.22 17.46 14.53C17.76 14.84 18.11 15 18.5 15C18.92 15 19.27 14.84 19.57 14.53C19.87 14.22 20 13.86 20 13.45V12C20 9.81 19.23 7.93 17.65 6.35C16.07 4.77 14.19 4 12 4C9.81 4 7.93 4.77 6.35 6.35C4.77 7.93 4 9.81 4 12C4 14.19 4.77 16.07 6.35 17.65C7.93 19.23 9.81 20 12 20H17V22H12C9.25 22 6.9 21 4.95 19.05C3 17.1 2 14.75 2 12C2 9.25 3 6.9 4.95 4.95C6.9 3 9.25 2 12 2Z" fill="#A1CF00"/>
+                    </svg>
+                    Nome de Usuário
+                </label>
+                {{ form.username }}
+            </div>
+
+            <div class="pssw-field">
+                <label for="id_senha">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 17C11.4696 17 10.9609 16.7893 10.5858 16.4142C10.2107 16.0391 10 15.5304 10 15C10 13.89 10.89 13 12 13C12.5304 13 13.0391 13.2107 13.4142 13.5858C13.7893 13.9609 14 14.4696 14 15C14 15.5304 13.7893 16.0391 13.4142 16.4142C13.0391 16.7893 12.5304 17 12 17ZM12 2C15.3137 2 18 4.68629 18 8V14C18 17.3137 15.3137 20 12 20C8.68629 20 6 17.3137 6 14V8C6 4.68629 8.68629 2 12 2ZM12 4C9.79086 4 8 5.79086 8 8V14C8 16.2091 9.79086 18 12 18C14.2091 18 16 16.2091 16 14V8C16 5.79086 14.2091 4 12 4Z" fill="#A1CF00"/>
+                    </svg>
+                    Senha
+                </label>
+                {{ form.senha }}
+            </div>
+
+            <div class="confirm-pssw-field">
+                <label for="id_confirm_senha">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 17C11.4696 17 10.9609 16.7893 10.5858 16.4142C10.2107 16.0391 10 15.5304 10 15C10 13.89 10.89 13 12 13C12.5304 13 13.0391 13.2107 13.4142 13.5858C13.7893 13.9609 14 14.4696 14 15C14 15.5304 13.7893 16.0391 13.4142 16.4142C13.0391 16.7893 12.5304 17 12 17ZM12 2C15.3137 2 18 4.68629 18 8V14C18 17.3137 15.3137 20 12 20C8.68629 20 6 17.3137 6 14V8C6 4.68629 8.68629 2 12 2ZM12 4C9.79086 4 8 5.79086 8 8V14C8 16.2091 9.79086 18 12 18C14.2091 18 16 16.2091 16 14V8C16 5.79086 14.2091 4 12 4Z" fill="#A1CF00"/>
+                    </svg>
+                    Confirme sua senha
+                </label>
+                {{ form.confirm_senha }}
+            </div>
+            
+            <button type="submit">Cadastrar</button>
+        </div>
+
+        {% if form.errors %}
+            <ul>
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        {% endif %}
+        
+
+    </form>
+
+{% endblock %}
+
+{% block btn_txt %}
+    Criar Conta
+{% endblock %}
+
+{% block sign_in_alt %}{% endblock %}
+
+{% block sign_type %}
+    signup
+{% endblock %}
+
+{% block toggle_signinup %}
+    Já possui uma conta? <a href="">Entrar</a>.
+{% endblock %}
+
+{% block message_title %}
+    Vamos começar!
+{% endblock %}
+
+{% block message_subtitle %}
+    Crie a sua conta e junte-se a nós na nossa plataforma!
+{% endblock %}

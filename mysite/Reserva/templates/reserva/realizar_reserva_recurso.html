@@ -1,0 +1,296 @@
+{% extends "./base.html" %}
+
+{% load static %}
+
+{% block title %}
+    Realizar reserva
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'realizar_reserva_recurso/css/realizar_reserva_recurso.css' %}">
+{% endblock %}
+
+{% block main %}
+<main class="container">
+        
+    <div class="titulo">
+        <h1>Escolha o dia e horário</h1>
+    </div>
+
+    <div class="calendario">
+        {% for dia in calendario %}
+            <div class="bloco" onclick="toggleBackgroundDay(this)" data-dia="{{ dia.data|date:'Y-m-d' }}">
+                <div class="conteudo">
+                    <span class="dia">{{ dia.dia_semana }}</span>  <!-- Exibe o dia da semana (ex: SEG) -->
+                    <span class="diaN">{{ dia.dia_formatado }}</span>  <!-- Exibe a data (ex: 01/01) -->
+                </div>
+            </div>
+        {% endfor %}
+        
+    </div>
+    
+    <div class="periodo">
+
+        <div class="manha">
+            <div class="titulo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_987_1529)">
+                    <path d="M11.25 3.75V1.5C11.25 1.30109 11.329 1.11032 11.4697 0.96967C11.6103 0.829018 11.8011 0.75 12 0.75C12.1989 0.75 12.3897 0.829018 12.5303 0.96967C12.671 1.11032 12.75 1.30109 12.75 1.5V3.75C12.75 3.94891 12.671 4.13968 12.5303 4.28033C12.3897 4.42098 12.1989 4.5 12 4.5C11.8011 4.5 11.6103 4.42098 11.4697 4.28033C11.329 4.13968 11.25 3.94891 11.25 3.75ZM18 12C18 13.1867 17.6481 14.3467 16.9888 15.3334C16.3295 16.3201 15.3925 17.0892 14.2961 17.5433C13.1997 17.9974 11.9933 18.1162 10.8295 17.8847C9.66557 17.6532 8.59647 17.0818 7.75736 16.2426C6.91824 15.4035 6.3468 14.3344 6.11529 13.1705C5.88378 12.0067 6.0026 10.8003 6.45672 9.7039C6.91085 8.60754 7.67988 7.67047 8.66658 7.01118C9.65327 6.35189 10.8133 6 12 6C13.5908 6.00174 15.1159 6.63444 16.2407 7.75928C17.3656 8.88412 17.9983 10.4092 18 12ZM16.5 12C16.5 11.11 16.2361 10.24 15.7416 9.49993C15.2471 8.75991 14.5443 8.18314 13.7221 7.84254C12.8998 7.50195 11.995 7.41283 11.1221 7.58647C10.2492 7.7601 9.44736 8.18868 8.81802 8.81802C8.18868 9.44736 7.7601 10.2492 7.58647 11.1221C7.41283 11.995 7.50195 12.8998 7.84254 13.7221C8.18314 14.5443 8.75991 15.2471 9.49993 15.7416C10.24 16.2361 11.11 16.5 12 16.5C13.1931 16.4988 14.337 16.0243 15.1806 15.1806C16.0243 14.337 16.4988 13.1931 16.5 12ZM5.46938 6.53063C5.61011 6.67136 5.80098 6.75042 6 6.75042C6.19902 6.75042 6.38989 6.67136 6.53062 6.53062C6.67136 6.38989 6.75042 6.19902 6.75042 6C6.75042 5.80098 6.67136 5.61011 6.53063 5.46938L5.03062 3.96938C4.88989 3.82864 4.69902 3.74958 4.5 3.74958C4.30098 3.74958 4.11011 3.82864 3.96938 3.96938C3.82864 4.11011 3.74958 4.30098 3.74958 4.5C3.74958 4.69902 3.82864 4.88989 3.96938 5.03062L5.46938 6.53063ZM5.46938 17.4694L3.96938 18.9694C3.82864 19.1101 3.74958 19.301 3.74958 19.5C3.74958 19.699 3.82864 19.8899 3.96938 20.0306C4.11011 20.1714 4.30098 20.2504 4.5 20.2504C4.69902 20.2504 4.88989 20.1714 5.03062 20.0306L6.53063 18.5306C6.60031 18.4609 6.65558 18.3782 6.6933 18.2872C6.73101 18.1961 6.75042 18.0985 6.75042 18C6.75042 17.9015 6.73101 17.8039 6.6933 17.7128C6.65558 17.6218 6.60031 17.5391 6.53063 17.4694C6.46094 17.3997 6.37822 17.3444 6.28717 17.3067C6.19613 17.269 6.09855 17.2496 6 17.2496C5.90145 17.2496 5.80387 17.269 5.71283 17.3067C5.62178 17.3444 5.53906 17.3997 5.46938 17.4694ZM18 6.75C18.0985 6.75008 18.1961 6.73074 18.2871 6.6931C18.3782 6.65546 18.4609 6.60025 18.5306 6.53063L20.0306 5.03062C20.1714 4.88989 20.2504 4.69902 20.2504 4.5C20.2504 4.30098 20.1714 4.11011 20.0306 3.96938C19.8899 3.82864 19.699 3.74958 19.5 3.74958C19.301 3.74958 19.1101 3.82864 18.9694 3.96938L17.4694 5.46938C17.3644 5.57427 17.2928 5.70796 17.2639 5.85352C17.2349 5.99908 17.2497 6.14998 17.3065 6.28709C17.3633 6.42421 17.4596 6.54139 17.583 6.62379C17.7065 6.70619 17.8516 6.75012 18 6.75ZM18.5306 17.4694C18.3899 17.3286 18.199 17.2496 18 17.2496C17.801 17.2496 17.6101 17.3286 17.4694 17.4694C17.3286 17.6101 17.2496 17.801 17.2496 18C17.2496 18.199 17.3286 18.3899 17.4694 18.5306L18.9694 20.0306C19.0391 20.1003 19.1218 20.1556 19.2128 20.1933C19.3039 20.231 19.4015 20.2504 19.5 20.2504C19.5985 20.2504 19.6961 20.231 19.7872 20.1933C19.8782 20.1556 19.9609 20.1003 20.0306 20.0306C20.1003 19.9609 20.1556 19.8782 20.1933 19.7872C20.231 19.6961 20.2504 19.5985 20.2504 19.5C20.2504 19.4015 20.231 19.3039 20.1933 19.2128C20.1556 19.1218 20.1003 19.0391 20.0306 18.9694L18.5306 17.4694ZM4.5 12C4.5 11.8011 4.42098 11.6103 4.28033 11.4697C4.13968 11.329 3.94891 11.25 3.75 11.25H1.5C1.30109 11.25 1.11032 11.329 0.96967 11.4697C0.829018 11.6103 0.75 11.8011 0.75 12C0.75 12.1989 0.829018 12.3897 0.96967 12.5303C1.11032 12.671 1.30109 12.75 1.5 12.75H3.75C3.94891 12.75 4.13968 12.671 4.28033 12.5303C4.42098 12.3897 4.5 12.1989 4.5 12ZM12 19.5C11.8011 19.5 11.6103 19.579 11.4697 19.7197C11.329 19.8603 11.25 20.0511 11.25 20.25V22.5C11.25 22.6989 11.329 22.8897 11.4697 23.0303C11.6103 23.171 11.8011 23.25 12 23.25C12.1989 23.25 12.3897 23.171 12.5303 23.0303C12.671 22.8897 12.75 22.6989 12.75 22.5V20.25C12.75 20.0511 12.671 19.8603 12.5303 19.7197C12.3897 19.579 12.1989 19.5 12 19.5ZM22.5 11.25H20.25C20.0511 11.25 19.8603 11.329 19.7197 11.4697C19.579 11.6103 19.5 11.8011 19.5 12C19.5 12.1989 19.579 12.3897 19.7197 12.5303C19.8603 12.671 20.0511 12.75 20.25 12.75H22.5C22.6989 12.75 22.8897 12.671 23.0303 12.5303C23.171 12.3897 23.25 12.1989 23.25 12C23.25 11.8011 23.171 11.6103 23.0303 11.4697C22.8897 11.329 22.6989 11.25 22.5 11.25Z" fill="#A1CF00"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_987_1529">
+                    <rect width="24" height="24" fill="white"/>
+                    </clipPath>
+                    </defs>
+                </svg>
+
+                <p>Manhã</p>
+            </div>
+
+            <div class="horarios_manha" id="horarios-container"></div>
+        </div>
+
+        <div class="tarde">
+            <div class="titulo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.5 14.25H18.7078C18.7354 14.0009 18.7495 13.7506 18.75 13.5C18.75 11.7098 18.0388 9.9929 16.773 8.72703C15.5071 7.46116 13.7902 6.75 12 6.75C10.2098 6.75 8.4929 7.46116 7.22703 8.72703C5.96116 9.9929 5.25 11.7098 5.25 13.5C5.25051 13.7506 5.26459 14.0009 5.29219 14.25H1.5C1.30109 14.25 1.11032 14.329 0.96967 14.4697C0.829018 14.6103 0.75 14.8011 0.75 15C0.75 15.1989 0.829018 15.3897 0.96967 15.5303C1.11032 15.671 1.30109 15.75 1.5 15.75H22.5C22.6989 15.75 22.8897 15.671 23.0303 15.5303C23.171 15.3897 23.25 15.1989 23.25 15C23.25 14.8011 23.171 14.6103 23.0303 14.4697C22.8897 14.329 22.6989 14.25 22.5 14.25ZM6.75 13.5C6.74862 12.778 6.89617 12.0636 7.18341 11.4012C7.47066 10.7388 7.89143 10.1428 8.41943 9.65044C8.94743 9.15806 9.57131 8.77986 10.2521 8.5395C10.9329 8.29913 11.6559 8.20176 12.376 8.25347C13.0961 8.30518 13.7978 8.50485 14.4373 8.84002C15.0767 9.17519 15.6402 9.63864 16.0924 10.2014C16.5446 10.7642 16.8759 11.4142 17.0656 12.1108C17.2553 12.8074 17.2992 13.5356 17.1947 14.25H6.80531C6.76897 14.0016 6.75048 13.751 6.75 13.5ZM20.25 18.75C20.25 18.9489 20.171 19.1397 20.0303 19.2803C19.8897 19.421 19.6989 19.5 19.5 19.5H4.5C4.30109 19.5 4.11032 19.421 3.96967 19.2803C3.82902 19.1397 3.75 18.9489 3.75 18.75C3.75 18.5511 3.82902 18.3603 3.96967 18.2197C4.11032 18.079 4.30109 18 4.5 18H19.5C19.6989 18 19.8897 18.079 20.0303 18.2197C20.171 18.3603 20.25 18.5511 20.25 18.75ZM6.82875 4.08563C6.73974 3.9076 6.72509 3.7015 6.78803 3.51268C6.85097 3.32385 6.98635 3.16776 7.16437 3.07875C7.3424 2.98974 7.5485 2.97509 7.73732 3.03803C7.92615 3.10097 8.08224 3.23635 8.17125 3.41438L8.92125 4.91438C8.96533 5.00253 8.99161 5.09849 8.99859 5.1968C9.00558 5.29511 8.99313 5.39383 8.96197 5.48732C8.9308 5.58082 8.88153 5.66726 8.81695 5.74172C8.75238 5.81617 8.67378 5.87718 8.58563 5.92125C8.49748 5.96533 8.40151 5.99161 8.3032 5.99859C8.20489 6.00558 8.10617 5.99313 8.01268 5.96197C7.91918 5.9308 7.83274 5.88153 7.75828 5.81695C7.68383 5.75238 7.62282 5.67378 7.57875 5.58563L6.82875 4.08563ZM1.57875 8.66438C1.62286 8.57626 1.6839 8.4977 1.75838 8.43319C1.83286 8.36868 1.91933 8.31948 2.01284 8.28839C2.10634 8.25731 2.20506 8.24496 2.30334 8.25205C2.40162 8.25913 2.49754 8.28551 2.58562 8.32969L4.08563 9.07969C4.26353 9.1687 4.39878 9.32474 4.46164 9.51348C4.52449 9.70222 4.50979 9.90819 4.42078 10.0861C4.33177 10.264 4.17573 10.3993 3.98699 10.4621C3.79825 10.525 3.59228 10.5103 3.41437 10.4213L1.91438 9.67125C1.82618 9.62722 1.74753 9.56624 1.68292 9.4918C1.61831 9.41735 1.56901 9.3309 1.53784 9.23739C1.50667 9.14387 1.49424 9.04513 1.50126 8.94681C1.50828 8.84849 1.53461 8.75251 1.57875 8.66438ZM19.5788 10.0856C19.4899 9.90772 19.4753 9.7018 19.5383 9.51317C19.6012 9.32453 19.7365 9.16861 19.9144 9.07969L21.4144 8.32969C21.5923 8.24067 21.7983 8.22598 21.987 8.28883C22.1757 8.35169 22.3318 8.48694 22.4208 8.66484C22.5098 8.84275 22.5245 9.04872 22.4616 9.23746C22.3988 9.4262 22.2635 9.58224 22.0856 9.67125L20.5856 10.4213C20.4975 10.4654 20.4015 10.4917 20.3032 10.4987C20.2049 10.5058 20.1061 10.4933 20.0126 10.4622C19.9191 10.431 19.8326 10.3817 19.7582 10.3171C19.6838 10.2525 19.6228 10.1738 19.5788 10.0856ZM15.0787 4.91438L15.8287 3.41438C15.9178 3.23635 16.0739 3.10097 16.2627 3.03803C16.4515 2.97509 16.6576 2.98974 16.8356 3.07875C17.0137 3.16776 17.149 3.32385 17.212 3.51268C17.2749 3.7015 17.2603 3.9076 17.1712 4.08563L16.4213 5.58563C16.3322 5.76365 16.1761 5.89903 15.9873 5.96197C15.7985 6.02491 15.5924 6.01026 15.4144 5.92125C15.2363 5.83224 15.101 5.67615 15.038 5.48732C14.9751 5.2985 14.9897 5.0924 15.0787 4.91438Z" fill="#A1CF00"/>
+                </svg>
+
+                <p>Tarde</p>
+            </div>
+
+            <div class="horarios_tarde" id="horarios-container"></div>
+        </div>
+
+        <div class="noite">
+            <div class="titulo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.8938 13.3341C21.7976 13.2377 21.6769 13.1693 21.5448 13.1362C21.4127 13.1032 21.274 13.1068 21.1438 13.1466C19.7137 13.5789 18.1931 13.6152 16.744 13.2515C15.295 12.8878 13.9717 12.1377 12.9153 11.0813C11.8589 10.0249 11.1088 8.70164 10.7451 7.25257C10.3814 5.8035 10.4177 4.28291 10.85 2.85282C10.8902 2.72251 10.894 2.58373 10.8611 2.4514C10.8283 2.31906 10.76 2.19819 10.6636 2.10178C10.5672 2.00537 10.4463 1.93706 10.314 1.90421C10.1816 1.87135 10.0428 1.8752 9.91253 1.91532C7.93537 2.52099 6.1996 3.73482 4.95222 5.38407C3.86136 6.83237 3.19596 8.55617 3.03078 10.3618C2.8656 12.1674 3.20719 13.9833 4.01717 15.6055C4.82714 17.2277 6.07342 18.5919 7.61597 19.5449C9.15852 20.4978 10.9362 21.0017 12.7494 21C14.8647 21.0065 16.9237 20.3188 18.6107 19.0425C20.2599 17.7951 21.4737 16.0594 22.0794 14.0822C22.1191 13.9524 22.1227 13.8142 22.0901 13.6825C22.0574 13.5507 21.9895 13.4303 21.8938 13.3341ZM17.7088 17.8444C16.1202 19.0409 14.1529 19.6233 12.169 19.4844C10.1852 19.3454 8.31822 18.4946 6.91191 17.0884C5.5056 15.6822 4.65458 13.8153 4.51551 11.8314C4.37643 9.84756 4.95867 7.88022 6.15503 6.29157C6.93447 5.26225 7.94216 4.42787 9.09878 3.85407C9.03289 4.31647 8.99969 4.78294 8.99941 5.25001C9.00214 7.83503 10.0302 10.3134 11.8581 12.1413C13.686 13.9692 16.1644 14.9973 18.7494 15C19.2174 14.9999 19.6848 14.9667 20.1482 14.9006C19.5738 16.0575 18.7388 17.0652 17.7088 17.8444Z" fill="#A1CF00"/>
+                </svg>
+
+                <p>Noite</p>
+            </div>
+
+            <div class="horarios_noite" id="horarios-container"></div>
+        </div>
+        
+    </div>
+
+    <!-- O Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal Conteúdo -->
+        <div class="modal-content">     
+            <!-- Conteúdo do Modal -->
+            <header>
+                <!-- Botão de Fechar -->
+                <svg class="close" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z" fill="#7DA000"/>
+                </svg>
+
+                <img src="{% static 'img/cover_default_400x100.webp' %}" alt="" class="cover">
+
+                <img src="{% static 'img/avatar_default_100x100.webp' %}" alt="" class="avatar">
+            </header>
+    
+            <div class="body">
+                <h1 class="title" id="nome_recurso_modal"></h1>
+    
+                <div class="info">
+                    <div class="date">
+                        <p>Data:</p>
+                        <span id="modal-dia"></span>
+                    </div>
+    
+                    <div class="time">
+                        <p>Horário:</p>
+                        <span id="modal-horario"></span>
+                    </div>
+    
+                    <div class="location">
+                        <p>Localização:</p>
+                        <span id="modal-bloco"></span>
+                    </div>
+    
+                    <div class="price">
+                        <p>Preço:</p>
+                        <span id="modal-preco"></span>
+                    </div>
+                </div>
+    
+                <div class="actions">
+                    <button class="" id="botao_outro_horario">
+                        Escolher outro horário
+                    </button>
+
+                    <button class="" id="botao_Reservar">
+                        Reservar
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</main>
+
+<script>
+    
+    let selectedDia = null;
+    let selectedDiaEscrito = null; 
+    let selectedHorario = null;
+    
+    // Pega o modal
+    let modal = document.getElementById("myModal");
+
+    // Pega o botão de fechar (X)
+    let closeModal = document.getElementsByClassName("close")[0];
+
+    document.getElementById('botao_Reservar').addEventListener('click', function() {
+    if (selectedHorario !== null) {
+        // Construir a URL com o valor de selectedHorario
+        let url = `/setAgenda/${selectedHorario}`;
+
+        // Redirecionar para a URL
+        window.location.href = url;
+    } else {
+        alert('Selecione um horário antes de reservar.');
+    }
+    });
+
+    function toggleBackgroundDay(element) {
+        // Seleciona todos os blocos (ou elementos similares) e remove a classe "active" de todos
+        const blocos = document.querySelectorAll(".bloco");  // Aqui você pode alterar para o seletor correto caso não seja .bloco
+        blocos.forEach(function(bloco) {
+            bloco.classList.remove("active");
+            selectedDia = null;
+            selectedDiaEscrito = null; 
+        });
+
+        // Adiciona a classe "active" apenas no item que foi clicado
+        element.classList.add("active");
+
+        selectedDia = element.getAttribute("data-dia");
+        
+    }
+
+    function toggleBackgroundSchedules(element) {
+        // Seleciona todos os blocos (ou elementos similares) e remove a classe "active" de todos
+        const blocos = document.querySelectorAll(".bloco_horario");  // Aqui você pode alterar para o seletor correto caso não seja .bloco
+        blocos.forEach(function(bloco) {
+            bloco.classList.remove("active");
+            selectedHorario = null;
+        });
+
+        // Adiciona a classe "active" apenas no item que foi clicado
+        element.classList.add("active");
+
+        selectedHorario = element.getAttribute("data-id");
+
+        checkOpenModal();
+    }
+
+    function checkOpenModal() {
+        if (selectedDia !== null && selectedHorario !== null) {
+            openModal(selectedDia, selectedHorario); // Passa o valor do data-dia e do bloco para abrir o modal
+        }   
+    }
+
+    function openModal(dia, id_horario) {
+        // Faz a requisição para obter as informações do horário
+        fetch(`/getInfoAgenda/${id_horario}`)
+            .then(response => response.json())
+            .then(data => {
+                // Preenche os dados no modal
+                document.getElementById("nome_recurso_modal").textContent = `${data.recurso}`;
+                document.getElementById("modal-dia").textContent = `${data.data}`;
+                document.getElementById("modal-horario").textContent = `${data.horario}`;
+                document.getElementById("modal-bloco").textContent = `${data.localizacao}`;
+                document.getElementById("modal-preco").textContent = `${data.preco}`;
+            })
+            .catch(error => console.error('Erro ao obter horário:', error));
+
+        // Exibe o modal
+        modal.style.display = "block";
+    }
+
+    const botaoOutroHorario = document.getElementById("botao_outro_horario");
+
+    // Função de fechamento, compartilhada entre o botão de fechar e o botão de "Escolher outro horário"
+    const fecharModal = () => {
+        modal.style.display = "none";  // Esconde o modal
+        const blocos = document.querySelectorAll(".bloco_horario");  // Seletor dos blocos de horário
+        blocos.forEach(function(bloco) {
+            bloco.classList.remove("active");  // Remove a classe active de todos os blocos
+            selectedHorario = null;  // Reseta o horário selecionado
+        });
+    };
+
+    // Adiciona a lógica de clique para o botão "Escolher outro horário"
+    botaoOutroHorario.addEventListener("click", fecharModal);
+
+    // Lógica do botão de fechar (caso você já tenha essa parte)
+    closeModal.onclick = fecharModal;
+
+    // Quando o usuário clica em qualquer lugar fora do modal, ele também fecha
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+            const blocos = document.querySelectorAll(".bloco_horario");  // Aqui você pode alterar para o seletor correto caso não seja .bloco
+            blocos.forEach(function(bloco) {
+                bloco.classList.remove("active");
+                selectedHorario = null;
+            });
+        }
+    }
+
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // Seleciona todas as datas no calendário
+        document.querySelectorAll(".bloco").forEach(function (bloco) {
+            bloco.addEventListener("click", function () {
+                let diaSelecionado = this.getAttribute("data-dia");  // Pega a data do atributo personalizado
+                let recursoId = "{{ recurso }}";  // ID do recurso vindo do Django
+
+                // Fazer a requisição AJAX para obter os horários da data selecionada
+                fetch(`/horarios/${recursoId}/${diaSelecionado}/`)
+                    .then(response => response.json())
+                    .then(data => {
+                        let horariosContainer = document.getElementById("horarios-container");
+                        horariosContainer.innerHTML = ""; // Limpar horários anteriores
+
+                // Criar os novos horários dinamicamente
+                        data.horarios.forEach(horario => {
+                            let div = document.createElement("div");
+                            div.className = "bloco_horario";
+                            div.setAttribute("data-id", horario.id);
+                            div.onclick = function() { toggleBackgroundSchedules(this); }; // Adiciona a função de clique
+                            div.innerHTML =`<div class="conteudo_horario">
+                                                <div class="hora">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.9915 1.66665C5.3915 1.66665 1.6665 5.39998 1.6665 9.99998C1.6665 14.6 5.3915 18.3333 9.9915 18.3333C14.5998 18.3333 18.3332 14.6 18.3332 9.99998C18.3332 5.39998 14.5998 1.66665 9.9915 1.66665ZM9.99984 16.6666C6.3165 16.6666 3.33317 13.6833 3.33317 9.99998C3.33317 6.31664 6.3165 3.33331 9.99984 3.33331C13.6832 3.33331 16.6665 6.31664 16.6665 9.99998C16.6665 13.6833 13.6832 16.6666 9.99984 16.6666Z" fill="#A1CF00"/>
+                                                        <path d="M10.4165 5.83331H9.1665V10.8333L13.5415 13.4583L14.1665 12.4333L10.4165 10.2083V5.83331Z" fill="#A1CF00"/>
+                                                    </svg>
+                                                    <span class="tempo">${horario.h_inicial}  -  ${horario.h_final}</span>
+                                                </div>
+                                                <div class="preco">
+                                                    <span>R$ ${horario.preco} <sup>/h</sup></span>
+                                                </div>
+                                            </div>`
+                            horariosContainer.appendChild(div);
+
+
+                            });
+                        })
+                .catch(error => console.error("Erro ao buscar horários:", error));
+            });
+        });
+    });       
+</script>
+
+{% endblock %}
+
+{% block js %}
+    {% static 'realizar_reserva_recurso/js/main.js' %}
+{% endblock %}
